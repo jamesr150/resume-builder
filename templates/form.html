@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Resume Builder</title>
+</head>
+<body>
+  <h1>Build Your Resume</h1>
+
+  <!-- Form that submits data to the /resume route using POST -->
+  <form action="/resume" method="post">
+    
+    <!-- Name input -->
+    <label>Name:</label><br>
+    <input type="text" name="name"><br><br>
+
+    <!-- Email input -->
+    <label>Email:</label><br>
+    <input type="email" name="email"><br><br>
+
+    <!-- Professional summary textarea -->
+    <label>Summary:</label><br>
+    <textarea name="summary" rows="5" cols="40"></textarea><br><br>
+
+    <!-- Skills input (comma-separated string) -->
+    <label>Skills (comma separated):</label><br>
+    <input type="text" name="skills"><br><br>
+
+    <!-- Submit button -->
+    <input type="submit" value="Generate Resume">
+  </form>
+</body>
+</html>

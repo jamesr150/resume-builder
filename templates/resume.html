@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Your Resume</title>
+</head>
+<body>
+  <!-- Display name -->
+  <h1>{{ name }}</h1>
+
+  <!-- Display email -->
+  <p><strong>Email:</strong> {{ email }}</p>
+
+  <!-- Display summary -->
+  <p><strong>Summary:</strong> {{ summary }}</p>
+
+  <!-- Display skills list -->
+  <h2>Skills</h2>
+  <ul>
+    <!-- Loop through the list of skills and show each as a list item -->
+    {% for skill in skills %}
+      <li>{{ skill.strip() }}</li>  <!-- .strip() removes extra spaces -->
+    {% endfor %}
+  </ul>
+</body>
+</html>
