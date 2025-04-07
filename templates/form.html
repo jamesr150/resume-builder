@@ -8,42 +8,36 @@
   <h1>Build Your Resume</h1>
 
   <!-- Form that submits data to the /resume route using POST -->
-  <form action="/resume" method="post">
-    
-    <!-- Name input -->
-    <label>Name:</label><br>
-    <input type="text" name="name"><br><br>
-
-    <!-- Email input -->
-    <label>Email:</label><br>
-    <input type="email" name="email"><br><br>
-
-    <!-- Job Title -->
-    <label>Job Title:</label><br>
-    <input type="text" name="job_title"><br><br>
-
-    <!-- Work Experience -->
-    <label>Work Experience:</label><br>
-    <textarea name="experience" rows="5"></textarea><br><br>
-
-    <!-- Education -->
-    <label>Education:</label><br>
-    <textarea name="education" rows="3"></textarea><br><br>
-
-    <!-- LinkedIn -->
-    <label>LinkedIn URL:</label><br>
-    <input type="text" name="linkedin"><br><br>
-
-    <!-- Professional summary textarea -->
-    <label>Summary:</label><br>
-    <textarea name="summary" rows="5" cols="40"></textarea><br><br>
-
-    <!-- Skills input (comma-separated string) -->
-    <label>Skills (comma separated):</label><br>
-    <input type="text" name="skills"><br><br>
-
-    <!-- Submit button -->
+  <form method="POST">
+    <h3>Contact Info</h3>
+    <label>Name:</label>
+    <input type="text" name="name" placeholder="e.g., James Rooney">
+  
+    <label>Email:</label>
+    <input type="email" name="email" placeholder="e.g., James@email.com">
+  
+    <label>LinkedIn URL:</label>
+    <input type="text" name="linkedin" placeholder="https://linkedin.com/in/yourprofile">
+  
+    <h3>Professional Info</h3>
+    <label>Job Title:</label>
+    <input type="text" name="job_title" placeholder="e.g., Software Engineer">
+  
+    <label>Work Experience:</label>
+    <textarea name="experience" rows="5" placeholder="Describe your past roles..."></textarea>
+  
+    <label>Education:</label>
+    <textarea name="education" rows="3" placeholder="Schools, degrees..."></textarea>
+  
+    <h3>Summary</h3>
+    <label>Summary:</label>
+    <textarea name="summary" rows="4" placeholder="Write a brief personal summary..."></textarea>
+  
+    <h3>Skills</h3>
+    <label>Skills (comma separated):</label>
+    <input type="text" name="skills" placeholder="Python, Flask, SQL, Communication">
+  
     <input type="submit" value="Generate Resume">
-  </form>
+  </form>  
 </body>
 </html>
