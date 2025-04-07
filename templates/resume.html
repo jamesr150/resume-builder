@@ -6,50 +6,55 @@
 </head>
 <body>
   <!-- Display flash message -->
-{% with messages = get_flashed_messages() %}
-{% if messages %}
-  <ul>
-    {% for message in messages %}
-      <li style="color: green; font-weight: bold;">{{ message }}</li>
-    {% endfor %}
-  </ul>
-{% endif %}
-{% endwith %}
-  <!-- Display name -->
-  <h1>{{ name }}</h1>
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <ul>
+        {% for message in messages %}
+          <li style="color: green; font-weight: bold;">{{ message }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  {% endwith %}
 
-  <!-- Display email -->
-  <p><strong>Email:</strong> {{ email }}</p>
+  <div class="resume-container">
+    <div class="resume-header">
+      <h1>{{ name }}</h1>
+      <h2>{{ job_title }}</h2>
+      <p>{{ email }} | <a href="{{ linkedin }}" target="_blank">LinkedIn</a></p>
+    </div>
 
-  <p><strong>Job Title:</strong> {{ job_title }}</p>
+    <hr>
 
-  <h2>Work Experience</h2>
-  <p>{{ experience }}</p>
+    <div class="resume-section">
+      <h3>Summary</h3>
+      <p>{{ summary }}</p>
+    </div>
 
-  <h2>Education</h2>
-  <p>{{ education }}</p>
+    <div class="resume-section">
+      <h3>Work Experience</h3>
+      <p>{{ experience }}</p>
+    </div>
 
-  <p><strong>LinkedIn:</strong> <a href="{{ linkedin }}" target="_blank">{{ linkedin }}</a></p>
+    <div class="resume-section">
+      <h3>Education</h3>
+      <p>{{ education }}</p>
+    </div>
 
-  <!-- Display summary -->
-  <p><strong>Summary:</strong> {{ summary }}</p>
+    <div class="resume-section">
+      <h3>Skills</h3>
+      <ul>
+        {% for skill in skills %}
+          <li>{{ skill.strip() }}</li>
+        {% endfor %}
+      </ul>
+    </div>
 
-  <!-- Display skills list -->
-  <h2>Skills</h2>
-  <ul>
-    <!-- Loop through the list of skills and show each as a list item -->
-    {% for skill in skills %}
-      <li>{{ skill.strip() }}</li>  
-      <!-- .strip() removes extra spaces -->
-    {% endfor %}
-  </ul>
-  <!-- Timestamp display -->
-  <p><em>Generated on {{ timestamp }}</em></p>
-  <h2>Download Your Resume</h2>
-  <!-- Back to Form button -->
-  <hr>
-  <form action="/" method="get">
-    <input type="submit" value="Back to Form">
-  </form>
+    <p class="timestamp"><em>Generated on {{ timestamp }}</em></p>
+
+    <hr>
+    <form action="/" method="get">
+      <input type="submit" value="Back to Form">
+    </form>
+  </div>
 </body>
 </html>
