@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <title>Your Resume</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
@@ -48,6 +49,7 @@
         {% endfor %}
       </ul>
     </div>
+    <a href="#" class="download-btn">Download PDF</a>
 
     <p class="timestamp"><em>Generated on {{ timestamp }}</em></p>
 

@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <title>Resume Builder</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
+  <div class="resume-container">
   <h1>Build Your Resume</h1>
   <p class="ai-credit">⚡ Powered by AI</p>
 
@@ -40,5 +42,6 @@
   
     <input type="submit" value="Generate Resume">
   </form> 
+  </div>
 </body>
 </html>
