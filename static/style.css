@@ -10,7 +10,8 @@ body {
   h1 {
     text-align: center;                   /* Center the title */
     color: #2c3e50;                       /* Dark blue-gray for contrast */
-  }
+    margin-bottom: 1px;               /* Space below the title */
+}
   
   /* Form container */
   form {
@@ -117,5 +118,12 @@ body {
     color: #2c3e50;
     border-bottom: 1px solid #ccc;
     padding-bottom: 4px;
+  }
+  .ai-credit {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #888;
+    font-style: italic;
   }
   
