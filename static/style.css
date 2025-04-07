@@ -1,0 +1,58 @@
+/* Base page styles */
+body {
+    font-family: Arial, sans-serif;       /* Clean, readable font */
+    background-color: #f2f2f2;            /* Light gray background */
+    margin: 40px;                         /* Add space around the page */
+    color: #333;                          /* Dark gray text for better readability */
+  }
+  
+  /* Heading styles */
+  h1 {
+    text-align: center;                   /* Center the title */
+    color: #2c3e50;                       /* Dark blue-gray for contrast */
+  }
+  
+  /* Form container */
+  form {
+    max-width: 600px;                     /* Keep form width reasonable on large screens */
+    margin: auto;                         /* Center the form horizontally */
+    padding: 20px;                        /* Space inside the form */
+    background: white;                    /* White background for form area */
+    border-radius: 8px;                   /* Slightly rounded corners */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Soft shadow around the form */
+  }
+  
+  /* Label styles */
+  label {
+    font-weight: bold;                    /* Make labels stand out */
+  }
+  
+  /* Input fields and textareas */
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 100%;                          /* Full width inputs */
+    padding: 10px;                        /* Padding inside inputs */
+    margin-top: 5px;                      /* Spacing above inputs */
+    margin-bottom: 15px;                  /* Spacing below inputs */
+    border: 1px solid #ccc;               /* Light border */
+    border-radius: 4px;                   /* Rounded input corners */
+    box-sizing: border-box;               /* Keeps padding inside width */
+  }
+  
+  /* Submit button */
+  input[type="submit"] {
+    background-color: #007bff;            /* Bootstrap-style blue */
+    color: white;                         /* White text */
+    padding: 12px 20px;                   /* Button size */
+    border: none;                         /* No border */
+    border-radius: 4px;                   /* Rounded corners */
+    cursor: pointer;                      /* Cursor changes to pointer on hover */
+    font-size: 16px;                      /* Make button text readable */
+  }
+  
+  /* Submit button hover effect */
+  input[type="submit"]:hover {
+    background-color: #0056b3;            /* Darker blue on hover */
+  }
+  

@@ -2,13 +2,34 @@
 <html>
 <head>
   <title>Your Resume</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
+  <!-- Display flash message -->
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+  <ul>
+    {% for message in messages %}
+      <li style="color: green; font-weight: bold;">{{ message }}</li>
+    {% endfor %}
+  </ul>
+{% endif %}
+{% endwith %}
   <!-- Display name -->
   <h1>{{ name }}</h1>
 
   <!-- Display email -->
   <p><strong>Email:</strong> {{ email }}</p>
+
+  <p><strong>Job Title:</strong> {{ job_title }}</p>
+
+  <h2>Work Experience</h2>
+  <p>{{ experience }}</p>
+
+  <h2>Education</h2>
+  <p>{{ education }}</p>
+
+  <p><strong>LinkedIn:</strong> <a href="{{ linkedin }}" target="_blank">{{ linkedin }}</a></p>
 
   <!-- Display summary -->
   <p><strong>Summary:</strong> {{ summary }}</p>
@@ -18,8 +39,17 @@
   <ul>
     <!-- Loop through the list of skills and show each as a list item -->
     {% for skill in skills %}
-      <li>{{ skill.strip() }}</li>  <!-- .strip() removes extra spaces -->
+      <li>{{ skill.strip() }}</li>  
+      <!-- .strip() removes extra spaces -->
     {% endfor %}
   </ul>
+  <!-- Timestamp display -->
+  <p><em>Generated on {{ timestamp }}</em></p>
+  <h2>Download Your Resume</h2>
+  <!-- Back to Form button -->
+  <hr>
+  <form action="/" method="get">
+    <input type="submit" value="Back to Form">
+  </form>
 </body>
 </html>

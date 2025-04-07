@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Resume Builder</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
   <h1>Build Your Resume</h1>
@@ -16,6 +17,22 @@
     <!-- Email input -->
     <label>Email:</label><br>
     <input type="email" name="email"><br><br>
+
+    <!-- Job Title -->
+    <label>Job Title:</label><br>
+    <input type="text" name="job_title"><br><br>
+
+    <!-- Work Experience -->
+    <label>Work Experience:</label><br>
+    <textarea name="experience" rows="5"></textarea><br><br>
+
+    <!-- Education -->
+    <label>Education:</label><br>
+    <textarea name="education" rows="3"></textarea><br><br>
+
+    <!-- LinkedIn -->
+    <label>LinkedIn URL:</label><br>
+    <input type="text" name="linkedin"><br><br>
 
     <!-- Professional summary textarea -->
     <label>Summary:</label><br>
