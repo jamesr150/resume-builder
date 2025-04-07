@@ -7,7 +7,7 @@ app.secret_key = '123'  # can be any random string
 
 
 # Route for the homepage (form)
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def form():
     # Render the HTML form
     return render_template('form.html')
