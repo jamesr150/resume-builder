@@ -1,17 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <!-- Google Font for modern, clean typography -->
+  <!-- Google Font for clean typography -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-
   <title>Your Resume</title>
-
-  <!-- Link to your CSS file for layout and styling -->
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-<body>
+<body class="animate-fade-in">
 
-  <!-- Display flash message on successful resume generation -->
+  <!-- Flash message for resume success -->
   {% with messages = get_flashed_messages() %}
     {% if messages %}
       <div class="flash-message">
@@ -22,42 +19,34 @@
     {% endif %}
   {% endwith %}
 
-  <!-- Resume layout wrapper -->
+  <!-- Resume content wrapper -->
   <div class="resume-container">
-
-    <!-- Header section: name, title, and contact -->
     <div class="resume-header">
-      <h1>{{ name }}</h1>
+      <h1 class="glow-text">{{ name }}</h1>
       <h2>{{ job_title }}</h2>
       <p class="contact-line">
-        {{ email }}
-        {% if linkedin %}
-          &nbsp;|&nbsp; <a href="{{ linkedin }}" target="_blank">LinkedIn</a>
-        {% endif %}
+        {{ email }}{% if linkedin %} &nbsp;|&nbsp; <a href="{{ linkedin }}" target="_blank">LinkedIn</a>{% endif %}
       </p>
     </div>
 
     <hr>
 
-    <!-- Summary section -->
+    <!-- Resume Sections -->
     <div class="resume-section">
       <h3>Summary</h3>
       <p>{{ summary }}</p>
     </div>
 
-    <!-- Work Experience section -->
     <div class="resume-section">
       <h3>Work Experience</h3>
       <p>{{ experience }}</p>
     </div>
 
-    <!-- Education section -->
     <div class="resume-section">
       <h3>Education</h3>
       <p>{{ education }}</p>
     </div>
 
-    <!-- Skills section, shown as a list -->
     <div class="resume-section">
       <h3>Skills</h3>
       <ul>
@@ -69,17 +58,15 @@
       </ul>
     </div>
 
-    <!-- Action buttons: Download and Back to Form -->
+    <!-- Action Buttons -->
     <div class="button-group">
-      <a href="#" class="download-btn">Download PDF</a>
+      <a href="#" class="download-btn pulse-btn">Download PDF</a>
       <form action="/" method="get" style="display: inline;">
-        <input type="submit" value="Back to Form">
+        <input type="submit" value="Back to Form" class="pulse-btn">
       </form>
     </div>
 
-    <!-- Timestamp to show when resume was generated -->
     <p class="timestamp"><em>Generated on {{ timestamp }}</em></p>
-
   </div>
 </body>
 </html>
