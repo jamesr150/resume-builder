@@ -2,9 +2,100 @@
 <html>
 <head>
   <!-- Google Font for clean typography -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <title>Your Resume</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <style>
+    /* Phase 1 Enhancements */
+    body {
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    .resume-container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 30px;
+      background: #1b263b;
+      border-radius: 12px;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .resume-header h1 {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .resume-header h2 {
+      font-size: 20px;
+      font-weight: 400;
+      color: #a8dadc;
+    }
+
+    .resume-section h3 {
+      font-size: 20px;
+      color: #e0e1dd;
+      font-weight: 600;
+      margin-bottom: 10px;
+      border-bottom: 2px solid linear-gradient(90deg, #00b4d8, transparent);
+      padding-bottom: 4px;
+    }
+
+    .resume-section p,
+    .resume-section li {
+      font-size: 16px;
+      color: #e0e1dd;
+    }
+
+    .resume-section + .resume-section {
+      margin-top: 40px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 30px;
+    }
+
+    .resume-section ul {
+      padding-left: 20px;
+    }
+
+    .contact-line {
+      color: #c0c5ce;
+      font-size: 14px;
+    }
+
+    .timestamp {
+      font-size: 13px;
+      text-align: right;
+      color: #999;
+      margin-top: 30px;
+    }
+
+    @media screen and (max-width: 600px) {
+      .resume-container {
+        margin: 20px;
+        padding: 20px;
+      }
+
+      .resume-header h1 {
+        font-size: 28px;
+      }
+
+      .resume-header h2 {
+        font-size: 16px;
+      }
+
+      .resume-section h3 {
+        font-size: 18px;
+      }
+
+      .resume-section p,
+      .resume-section li {
+        font-size: 15px;
+      }
+    }
+  </style>
 </head>
 <body class="animate-fade-in">
 
@@ -22,34 +113,32 @@
   <!-- Resume content wrapper -->
   <div class="resume-container" id="resume-content">
     <div class="resume-header">
-      <h1 class="glow-text">{{ name }}</h1>
-      <h2>{{ job_title }}</h2>
-      <p class="contact-line">
+      <h1 class="glow-text" contenteditable="true">{{ name }}</h1>
+      <h2 contenteditable="true">{{ job_title }}</h2>
+      <p class="contact-line" contenteditable="true">
         {{ email }}{% if linkedin %} &nbsp;|&nbsp; <a href="{{ linkedin }}" target="_blank">LinkedIn</a>{% endif %}
       </p>
     </div>
 
-    <hr>
-
     <!-- Resume Sections -->
     <div class="resume-section">
       <h3>Summary</h3>
-      <p>{{ summary }}</p>
+      <p contenteditable="true">{{ summary }}</p>
     </div>
 
     <div class="resume-section">
       <h3>Work Experience</h3>
-      <p>{{ experience }}</p>
+      <p contenteditable="true">{{ experience }}</p>
     </div>
 
     <div class="resume-section">
       <h3>Education</h3>
-      <p>{{ education }}</p>
+      <p contenteditable="true">{{ education }}</p>
     </div>
 
     <div class="resume-section">
       <h3>Skills</h3>
-      <ul>
+      <ul contenteditable="true">
         {% for skill in skills %}
           {% if skill.strip() %}
             <li>{{ skill.strip() }}</li>
@@ -68,22 +157,21 @@
 
     <p class="timestamp"><em>Generated on {{ timestamp }}</em></p>
   </div>
+
   <!-- html2pdf.js library -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-<script>
-  function downloadPDF() {
-    const element = document.getElementById('resume-content');
-
-    const options = {
-      margin:       0.5,
-      filename:     'resume.pdf',
-      image:        { type: 'jpeg', quality: 0.98 },
-      html2canvas:  { scale: 2 },
-      jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
-    };
-
-    html2pdf().set(options).from(element).save();
-  }
-</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script>
+    function downloadPDF() {
+      const element = document.getElementById('resume-content');
+      const options = {
+        margin:       0.5,
+        filename:     'resume.pdf',
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { scale: 2 },
+        jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+      };
+      html2pdf().set(options).from(element).save();
+    }
+  </script>
 </body>
 </html>
