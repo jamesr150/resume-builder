@@ -1,29 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>Resume Builder</title>
-
-  <!-- Font: Inter for clean UI -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-
-  <!-- Link to your updated stylesheet -->
+  <title>Resume Builder</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-<body class="dark-theme">
+<body>
+  <div class="resume-container">
+    <h1>Build Your Resume</h1>
+    <p class="ai-credit">Powered by AI</p>
 
-  <div class="resume-container animate-fade-in">
-
-    <!-- Title -->
-    <h1 class="glow-text">Build Your Resume</h1>
-    <p class="ai-credit">⚡ Powered by AI</p>
-
-    <!-- Resume Form -->
     <form method="POST" action="/resume">
-
-      <!-- Contact Info -->
       <h3>Contact Info</h3>
       <label>Name:</label>
       <input type="text" name="name" placeholder="e.g., James Rooney">
@@ -34,7 +23,6 @@
       <label>LinkedIn URL:</label>
       <input type="text" name="linkedin" placeholder="https://linkedin.com/in/yourprofile">
 
-      <!-- Job Info -->
       <h3>Professional Info</h3>
       <label>Job Title:</label>
       <input type="text" name="job_title" placeholder="e.g., Software Engineer">
@@ -42,22 +30,56 @@
       <label>Work Experience:</label>
       <textarea name="experience" rows="5" placeholder="Describe your past roles..."></textarea>
 
-      <label>Education:</label>
-      <textarea name="education" rows="3" placeholder="Schools, degrees..."></textarea>
-
-      <!-- Summary -->
       <h3>Summary</h3>
       <label>Summary:</label>
       <textarea name="summary" rows="4" placeholder="Write a brief personal summary..."></textarea>
+      <button id="ai-summary-btn" type="button" onclick="generateSummary()" style="margin-top: 8px;">Generate Summary with AI</button>
 
-      <!-- Skills -->
+      <h3>Education</h3>
+      <textarea name="education" rows="3" placeholder="Schools, degrees..."></textarea>
+
       <h3>Skills</h3>
       <label>Skills (comma separated):</label>
       <input type="text" name="skills" placeholder="Python, Flask, SQL, Communication">
 
-      <!-- Submit -->
-      <input type="submit" value="Generate Resume" class="submit-btn pulse-btn">
+      <input type="submit" value="Generate Resume">
     </form>
   </div>
+
+  <script>
+    async function generateSummary() {
+      const button = document.getElementById("ai-summary-btn");
+      const jobTitle = document.querySelector('input[name="job_title"]').value;
+      const experience = document.querySelector('textarea[name="experience"]').value;
+
+      if (!jobTitle || !experience) {
+        alert("Please fill in job title and experience before generating a summary.");
+        return;
+      }
+
+      button.disabled = true;
+      button.textContent = "Generating...";
+
+      try {
+        const response = await fetch('/generate-summary', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ job_title: jobTitle, experience: experience })
+        });
+
+        const data = await response.json();
+        if (data.summary) {
+          document.querySelector('textarea[name="summary"]').value = data.summary;
+        } else {
+          alert('Error: ' + data.error);
+        }
+      } catch (error) {
+        alert("Something went wrong. Please try again later.");
+      } finally {
+        button.disabled = false;
+        button.textContent = "Generate Summary with AI";
+      }
+    }
+  </script>
 </body>
 </html>
