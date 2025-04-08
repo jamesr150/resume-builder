@@ -20,7 +20,7 @@
   {% endwith %}
 
   <!-- Resume content wrapper -->
-  <div class="resume-container">
+  <div class="resume-container" id="resume-content">
     <div class="resume-header">
       <h1 class="glow-text">{{ name }}</h1>
       <h2>{{ job_title }}</h2>
@@ -60,7 +60,7 @@
 
     <!-- Action Buttons -->
     <div class="button-group">
-      <a href="#" class="download-btn pulse-btn">Download PDF</a>
+      <a href="#" class="download-btn pulse-btn" onclick="downloadPDF(); return false;">Download PDF</a>
       <form action="/" method="get" style="display: inline;">
         <input type="submit" value="Back to Form" class="pulse-btn">
       </form>
@@ -68,5 +68,22 @@
 
     <p class="timestamp"><em>Generated on {{ timestamp }}</em></p>
   </div>
+  <!-- html2pdf.js library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script>
+  function downloadPDF() {
+    const element = document.getElementById('resume-content');
+
+    const options = {
+      margin:       0.5,
+      filename:     'resume.pdf',
+      image:        { type: 'jpeg', quality: 0.98 },
+      html2canvas:  { scale: 2 },
+      jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+    };
+
+    html2pdf().set(options).from(element).save();
+  }
+</script>
 </body>
 </html>
