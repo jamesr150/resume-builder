@@ -3,27 +3,44 @@
 ========================= */
 body {
     font-family: 'Inter', sans-serif;
-    background-color: #f2f2f2;
-    margin: 40px;
-    color: #333;
+    background-color: #0d1b2a; /* Dark navy background */
+    margin: 0;
+    padding: 40px;
+    color: #e0e1dd; /* Soft off-white text */
+  }
+  
+  /* Fade-in animation */
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-in forwards;
+    opacity: 0;
+  }
+  
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
   }
   
   /* ========================
      Heading Styles
   ========================= */
   h1 {
-    font-size: 32px;
+    font-size: 36px;
     font-weight: 700;
-    color: #2c3e50;
+    color: #e0e1dd;
     text-align: center;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
+  }
+  
+  .glow-text {
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.1);
   }
   
   h2, h3 {
-    font-size: 20px;
-    color: #34495e;
+    font-size: 22px;
+    color: #e0e1dd;
     margin-top: 30px;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #415a77;
     padding-bottom: 6px;
   }
   
@@ -33,10 +50,10 @@ body {
   form {
     max-width: 600px;
     margin: auto;
-    padding: 20px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 30px;
+    background: #1b263b; /* Darker navy */
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.4);
     transition: all 0.3s ease-in-out;
   }
   
@@ -44,13 +61,15 @@ body {
     margin-top: 30px;
     margin-bottom: 10px;
     font-size: 20px;
-    color: #2c3e50;
-    border-bottom: 1px solid #ccc;
+    color: #e0e1dd;
+    border-bottom: 1px solid #778da9;
     padding-bottom: 4px;
   }
   
   label {
-    font-weight: bold;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 5px;
   }
   
   /* ========================
@@ -60,130 +79,54 @@ body {
   input[type="email"],
   textarea {
     width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
+    padding: 12px;
+    margin-bottom: 20px;
+    background-color: #415a77;
+    border: none;
+    color: #e0e1dd;
+    border-radius: 6px;
     font-size: 16px;
+    box-sizing: border-box;
+    transition: box-shadow 0.3s;
   }
   
   input:focus,
   textarea:focus {
-    border-color: #007bff;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+    border: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.4);
     outline: none;
   }
   
   /* ========================
      Submit and Download Buttons
   ========================= */
-  input[type="submit"] {
-    background-color: #007bff;
+  input[type="submit"],
+  .download-btn {
+    background-color: #00b4d8;
     color: white;
-    padding: 12px 20px;
+    padding: 12px 24px;
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
     cursor: pointer;
     font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
   }
   
-  input[type="submit"]:hover {
-    background-color: #0056b3;
-  }
-  
-  .download-btn {
-    display: inline-block;
-    background-color: #28a745;
-    color: white;
-    padding: 10px 16px;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: 500;
-    margin-top: 20px;
-  }
-  
+  input[type="submit"]:hover,
   .download-btn:hover {
-    background-color: #218838;
+    background-color: #0096c7;
+    transform: translateY(-2px);
   }
   
-  /* ========================
-     Flash Message
-  ========================= */
-  .flash-message {
-    text-align: center;
-    color: green;
-    font-weight: bold;
-    margin-bottom: 20px;
+  .pulse-btn {
+    animation: pulse 2s infinite;
   }
   
-  /* ========================
-     Resume Container
-  ========================= */
-  .resume-container {
-    max-width: 700px;
-    margin: 40px auto;
-    padding: 30px;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease-in-out;
-  }
-  
-  /* ========================
-     Resume Header
-  ========================= */
-  .resume-header {
-    text-align: center;
-    margin-bottom: 30px;
-  }
-  
-  .resume-header h1 {
-    font-size: 28px;
-    font-weight: 700;
-    margin-bottom: 4px;
-  }
-  
-  .resume-header h2 {
-    font-size: 18px;
-    color: #666;
-    margin: 0;
-  }
-  
-  .resume-header p,
-  .contact-line {
-    color: #777;
-    font-size: 14px;
-  }
-  
-  /* ========================
-     Resume Sections
-  ========================= */
-  .resume-section {
-    margin-top: 30px;
-    border-top: 1px solid #ddd;
-    padding-top: 20px;
-  }
-  
-  .resume-section h3 {
-    font-size: 18px;
-    color: #2c3e50;
-    margin-bottom: 8px;
-  }
-  
-  .resume-section ul {
-    padding-left: 20px;
-  }
-  
-  /* ========================
-     Timestamp
-  ========================= */
-  .timestamp {
-    text-align: right;
-    margin-top: 40px;
-    color: #999;
-    font-size: 13px;
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(0, 180, 216, 0.6); }
+    70% { box-shadow: 0 0 0 10px rgba(0, 180, 216, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(0, 180, 216, 0); }
   }
   
   /* ========================
@@ -191,32 +134,31 @@ body {
   ========================= */
   .ai-credit {
     text-align: center;
-    margin-top: 10px;
+    margin-top: 6px;
     font-size: 14px;
-    color: #888;
+    color: #a8dadc;
     font-style: italic;
   }
   
   /* ========================
-     Button Group Layout
+     Resume Container & Responsive
   ========================= */
-  .button-group {
-    text-align: center;
-    margin-top: 30px;
+  .resume-container {
+    max-width: 720px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #1b263b;
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
   }
   
-  .download-btn,
-  .button-group input[type="submit"] {
-    margin: 0 10px;
-  }
-  
-  /* ========================
-     Responsive Styles
-  ========================= */
   @media screen and (max-width: 600px) {
+    body {
+      padding: 20px;
+    }
+  
     form,
     .resume-container {
-      margin: 20px;
       padding: 20px;
     }
   
