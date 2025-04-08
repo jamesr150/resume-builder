@@ -1,47 +1,66 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <!-- Google Font for clean modern typography -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
   <title>Resume Builder</title>
+
+  <!-- Link to your custom stylesheet -->
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-  <div class="resume-container">
-  <h1>Build Your Resume</h1>
-  <p class="ai-credit">⚡ Powered by AI</p>
 
-  <!-- Form that submits data to the /resume route using POST -->
-  <form method="POST" action="/resume">
-    <h3>Contact Info</h3>
-    <label>Name:</label>
-    <input type="text" name="name" placeholder="e.g., James Rooney">
-  
-    <label>Email:</label>
-    <input type="email" name="email" placeholder="e.g., James@email.com">
-  
-    <label>LinkedIn URL:</label>
-    <input type="text" name="linkedin" placeholder="https://linkedin.com/in/yourprofile">
-  
-    <h3>Professional Info</h3>
-    <label>Job Title:</label>
-    <input type="text" name="job_title" placeholder="e.g., Software Engineer">
-  
-    <label>Work Experience:</label>
-    <textarea name="experience" rows="5" placeholder="Describe your past roles..."></textarea>
-  
-    <label>Education:</label>
-    <textarea name="education" rows="3" placeholder="Schools, degrees..."></textarea>
-  
-    <h3>Summary</h3>
-    <label>Summary:</label>
-    <textarea name="summary" rows="4" placeholder="Write a brief personal summary..."></textarea>
-  
-    <h3>Skills</h3>
-    <label>Skills (comma separated):</label>
-    <input type="text" name="skills" placeholder="Python, Flask, SQL, Communication">
-  
-    <input type="submit" value="Generate Resume">
-  </form> 
+  <!-- Main container for the form UI -->
+  <div class="resume-container">
+    
+    <!-- Page heading and optional AI label -->
+    <h1>Build Your Resume</h1>
+    <p class="ai-credit">⚡ Powered by AI</p>
+
+    <!-- 
+      Main resume form.
+      Sends data to /resume using POST method.
+      Flask will handle the form data and render a preview.
+    -->
+    <form method="POST" action="/resume">
+
+      <!-- Section: Contact Info -->
+      <h3>Contact Info</h3>
+      <label>Name:</label>
+      <input type="text" name="name" placeholder="e.g., James Rooney">
+
+      <label>Email:</label>
+      <input type="email" name="email" placeholder="e.g., James@email.com">
+
+      <label>LinkedIn URL:</label>
+      <input type="text" name="linkedin" placeholder="https://linkedin.com/in/yourprofile">
+
+      <!-- Section: Job-related info -->
+      <h3>Professional Info</h3>
+      <label>Job Title:</label>
+      <input type="text" name="job_title" placeholder="e.g., Software Engineer">
+
+      <label>Work Experience:</label>
+      <textarea name="experience" rows="5" placeholder="Describe your past roles..."></textarea>
+
+      <label>Education:</label>
+      <textarea name="education" rows="3" placeholder="Schools, degrees..."></textarea>
+
+      <!-- Section: Personal summary -->
+      <h3>Summary</h3>
+      <label>Summary:</label>
+      <textarea name="summary" rows="4" placeholder="Write a brief personal summary..."></textarea>
+
+      <!-- Section: Skills (entered as a comma-separated list) -->
+      <h3>Skills</h3>
+      <label>Skills (comma separated):</label>
+      <input type="text" name="skills" placeholder="Python, Flask, SQL, Communication">
+
+      <!-- Submit button triggers resume preview generation -->
+      <input type="submit" value="Generate Resume">
+    </form> 
+
   </div>
 </body>
 </html>

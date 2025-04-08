@@ -1,115 +1,45 @@
-/* Base page styles */
+/* ========================
+   Global Base Styles
+========================= */
 body {
-    font-family: 'Inter', sans-serif;       /* Clean, readable font */
-    background-color: #f2f2f2;            /* Light gray background */
-    margin: 40px;                         /* Add space around the page */
-    color: #333;                          /* Dark gray text for better readability */
+    font-family: 'Inter', sans-serif;
+    background-color: #f2f2f2;
+    margin: 40px;
+    color: #333;
   }
   
-  /* Heading styles */
+  /* ========================
+     Heading Styles
+  ========================= */
   h1 {
     font-size: 32px;
-  font-weight: 700;
-  color: #2c3e50;
-  text-align: center;
-  margin-bottom: 6px;              /* Space below the title */
-}
-
-h2, h3 {
+    font-weight: 700;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 6px;
+  }
+  
+  h2, h3 {
     font-size: 20px;
     color: #34495e;
     margin-top: 30px;
     border-bottom: 1px solid #eee;
     padding-bottom: 6px;
   }
-
-  /* Form container */
+  
+  /* ========================
+     Form Styles
+  ========================= */
   form {
-    max-width: 600px;                     /* Keep form width reasonable on large screens */
-    margin: auto;                         /* Center the form horizontally */
-    padding: 20px;                        /* Space inside the form */
-    background: white;                    /* White background for form area */
-    border-radius: 8px;                   /* Slightly rounded corners */
-    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Soft shadow around the form */
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease-in-out;
   }
   
-  /* Label styles */
-  label {
-    font-weight: bold;                    /* Make labels stand out */
-  }
-  
-  /* Input fields and textareas */
-  input[type="text"],
-  input[type="email"],
-  textarea {
-    width: 100%;                          /* Full width inputs */
-    padding: 10px;                        /* Padding inside inputs */
-    margin-top: 5px;                      /* Spacing above inputs */
-    margin-bottom: 15px;                  /* Spacing below inputs */
-    border: 1px solid #ccc;               /* Light border */
-    border-radius: 4px;                   /* Rounded input corners */
-    box-sizing: border-box;               /* Keeps padding inside width */
-  }
-  
-  /* Submit button */
-  input[type="submit"] {
-    background-color: #007bff;            /* Bootstrap-style blue */
-    color: white;                         /* White text */
-    padding: 12px 20px;                   /* Button size */
-    border: none;                         /* No border */
-    border-radius: 4px;                   /* Rounded corners */
-    cursor: pointer;                      /* Cursor changes to pointer on hover */
-    font-size: 16px;                      /* Make button text readable */
-  }
-  
-  /* Submit button hover effect */
-  input[type="submit"]:hover {
-    background-color: #0056b3;            /* Darker blue on hover */
-  }
-  
-  .resume-header {
-    text-align: center;
-    margin-bottom: 30px;
-  }
-  
-  .resume-header h1 {
-    font-size: 32px;
-    margin-bottom: 5px;
-  }
-  
-  .resume-header h2 {
-    font-size: 20px;
-    color: #555;
-    font-weight: normal;
-    margin-bottom: 5px;
-  }
-  
-  .resume-header p {
-    color: #777;
-    font-size: 14px;
-  }
-  
-  .resume-section {
-    margin-top: 30px;
-  }
-  
-  .resume-section h3 {
-    font-size: 18px;
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 4px;
-    margin-bottom: 10px;
-  }
-  
-  .resume-section ul {
-    padding-left: 20px;
-  }
-  
-  .timestamp {
-    text-align: right;
-    margin-top: 40px;
-    color: #999;
-    font-size: 13px;
-  }
   form h3 {
     margin-top: 30px;
     margin-bottom: 10px;
@@ -118,48 +48,51 @@ h2, h3 {
     border-bottom: 1px solid #ccc;
     padding-bottom: 4px;
   }
-  .ai-credit {
-    text-align: center;
-    margin-top: 10px;
-    font-size: 14px;
-    color: #888;
-    font-style: italic;
-  }
-  .resume-container {
-    max-width: 700px;
-    margin: 40px auto;
-    padding: 30px;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-  }
-  @media screen and (max-width: 600px) {
-    form, .resume-container {
-      margin: 20px;
-      padding: 20px;
-    }
   
-    input, textarea {
-      font-size: 14px;
-    }
-  
-    h1 {
-      font-size: 24px;
-    }
-  
-    .ai-credit {
-      font-size: 12px;
-    }
-  }
-  form, .resume-container {
-    transition: all 0.3s ease-in-out;
+  label {
+    font-weight: bold;
   }
   
-  input:focus, textarea:focus {
+  /* ========================
+     Input Fields
+  ========================= */
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+  
+  input:focus,
+  textarea:focus {
     border-color: #007bff;
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
     outline: none;
   }
+  
+  /* ========================
+     Submit and Download Buttons
+  ========================= */
+  input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  
   .download-btn {
     display: inline-block;
     background-color: #28a745;
@@ -173,5 +106,131 @@ h2, h3 {
   
   .download-btn:hover {
     background-color: #218838;
+  }
+  
+  /* ========================
+     Flash Message
+  ========================= */
+  .flash-message {
+    text-align: center;
+    color: green;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  /* ========================
+     Resume Container
+  ========================= */
+  .resume-container {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* ========================
+     Resume Header
+  ========================= */
+  .resume-header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .resume-header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  
+  .resume-header h2 {
+    font-size: 18px;
+    color: #666;
+    margin: 0;
+  }
+  
+  .resume-header p,
+  .contact-line {
+    color: #777;
+    font-size: 14px;
+  }
+  
+  /* ========================
+     Resume Sections
+  ========================= */
+  .resume-section {
+    margin-top: 30px;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+  }
+  
+  .resume-section h3 {
+    font-size: 18px;
+    color: #2c3e50;
+    margin-bottom: 8px;
+  }
+  
+  .resume-section ul {
+    padding-left: 20px;
+  }
+  
+  /* ========================
+     Timestamp
+  ========================= */
+  .timestamp {
+    text-align: right;
+    margin-top: 40px;
+    color: #999;
+    font-size: 13px;
+  }
+  
+  /* ========================
+     AI Credit Line
+  ========================= */
+  .ai-credit {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #888;
+    font-style: italic;
+  }
+  
+  /* ========================
+     Button Group Layout
+  ========================= */
+  .button-group {
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  .download-btn,
+  .button-group input[type="submit"] {
+    margin: 0 10px;
+  }
+  
+  /* ========================
+     Responsive Styles
+  ========================= */
+  @media screen and (max-width: 600px) {
+    form,
+    .resume-container {
+      margin: 20px;
+      padding: 20px;
+    }
+  
+    input,
+    textarea {
+      font-size: 14px;
+    }
+  
+    h1 {
+      font-size: 24px;
+    }
+  
+    .ai-credit {
+      font-size: 12px;
+    }
   }
   
