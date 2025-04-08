@@ -4,20 +4,20 @@
 from flask import Flask, render_template, request, flash, jsonify
 from datetime import datetime
 from dotenv import load_dotenv
-import openai
+from openai import OpenAI
 import os
 
 # Load environment variables from .env
 load_dotenv()
 
-# Set your OpenAI API key securely
-openai.api_key = os.getenv("OPENAI_API_KEY")
+# Initialize OpenAI client with API key from environment
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 # ===========================
 # Initialize Flask App
 # ===========================
 app = Flask(__name__)
-app.secret_key = '123'  # Needed for flash messages
+app.secret_key = '123'  # Used for flash messages
 
 # ===========================
 # Route: Home Form Page
@@ -31,6 +31,7 @@ def form():
 # ===========================
 @app.route('/resume', methods=['POST'])
 def resume():
+    # Retrieve form data
     name = request.form['name']
     email = request.form['email']
     summary = request.form['summary']
@@ -40,7 +41,10 @@ def resume():
     education = request.form['education']
     linkedin = request.form['linkedin']
 
+    # Generate timestamp
     timestamp = datetime.now().strftime("%B %d, %Y at %I:%M %p")
+
+    # Show success message
     flash('Resume generated successfully!')
 
     return render_template(
@@ -57,7 +61,7 @@ def resume():
     )
 
 # ===========================
-# Route: Generate Summary with OpenAI
+# Route: Generate AI Summary
 # ===========================
 @app.route('/generate-summary', methods=['POST'])
 def generate_summary():
@@ -71,20 +75,19 @@ def generate_summary():
     )
 
     try:
-        response = openai.ChatCompletion.create(
+        response = client.chat.completions.create(
             model="gpt-3.5-turbo",
             messages=[{ "role": "user", "content": prompt }],
             temperature=0.7,
             max_tokens=150
         )
-        summary = response['choices'][0]['message']['content'].strip()
+        summary = response.choices[0].message.content.strip()
         return jsonify({'summary': summary})
-
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
 # ===========================
-# Run App
+# Run the App (Development Only)
 # ===========================
 if __name__ == '__main__':
     app.run(debug=True)
