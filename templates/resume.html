@@ -72,9 +72,17 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
   <script>
     function downloadPDF() {
-      const element = document.getElementById('resume-content');
-      element.classList.add('printable'); // apply PDF-specific styles
-  
+      const original = document.getElementById('resume-content');
+    
+      // Clone the content
+      const clone = original.cloneNode(true);
+      clone.classList.add('printable');
+    
+      // Hide the clone off-screen
+      clone.style.position = 'absolute';
+      clone.style.left = '-9999px';
+      document.body.appendChild(clone);
+    
       const options = {
         margin: 0.5,
         filename: 'resume.pdf',
@@ -82,11 +90,12 @@
         html2canvas: { scale: 2 },
         jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
       };
-  
-      html2pdf().set(options).from(element).save().then(() => {
-        element.classList.remove('printable'); // revert to normal
+    
+      html2pdf().set(options).from(clone).save().then(() => {
+        document.body.removeChild(clone); // Clean up
       });
     }
-  </script>  
+    </script>
+    
 </body>
 </html>
