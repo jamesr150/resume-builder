@@ -98,5 +98,31 @@
   }
 }
   </script>
+  <script>
+    // Save form data on submit
+    document.querySelector("form").addEventListener("submit", () => {
+      const formData = {
+        name: document.querySelector('input[name="name"]').value,
+        email: document.querySelector('input[name="email"]').value,
+        linkedin: document.querySelector('input[name="linkedin"]').value,
+        job_title: document.querySelector('input[name="job_title"]').value,
+        experience: document.querySelector('textarea[name="experience"]').value,
+        summary: document.querySelector('textarea[name="summary"]').value,
+        education: document.querySelector('textarea[name="education"]').value,
+        skills: document.querySelector('input[name="skills"]').value
+      };
+      localStorage.setItem('resumeFormData', JSON.stringify(formData));
+    });
+  
+    // Repopulate form if data exists
+    window.addEventListener("DOMContentLoaded", () => {
+      const savedData = JSON.parse(localStorage.getItem('resumeFormData') || '{}');
+      for (const key in savedData) {
+        const el = document.querySelector(`[name="${key}"]`);
+        if (el) el.value = savedData[key];
+      }
+    });
+  </script>
+  
 </body>
 </html>
