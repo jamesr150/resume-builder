@@ -70,12 +70,13 @@ body {
   }
   
   input[type="text"],
-  input[type="email"] {
+  input[type="email"],
+  textarea {
     width: 100%;
     padding: 12px;
     margin-bottom: 20px;
-    background-color: #415a77;
-    border: none;
+    background-color: #2c3e50;
+    border: 1px solid #3e5c76;
     color: #e0e1dd;
     border-radius: 6px;
     font-size: 16px;
@@ -83,19 +84,9 @@ body {
     transition: box-shadow 0.3s;
   }
   
-  textarea {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 20px;
-    background-color: #2c3e50;
-    color: white;
-    border: 1px solid #3e5c76;
-    border-radius: 6px;
-    font-size: 14px;
-    box-sizing: border-box;
-    resize: none;
-    min-height: 100px;
-    overflow: hidden;
+  input::placeholder,
+  textarea::placeholder {
+    color: #9db2bf;
   }
   
   input:focus,
@@ -107,7 +98,8 @@ body {
   /* ========================
      Buttons
   ========================= */
-  .btn {
+  .btn,
+  input[type="submit"] {
     color: white;
     padding: 12px 24px;
     border: none;
@@ -119,6 +111,14 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     text-decoration: none;
     display: inline-block;
+    text-align: center;
+    background-color: #00b4d8;
+  }
+  
+  .btn:hover,
+  input[type="submit"]:hover {
+    background-color: #0096c7;
+    transform: translateY(-2px);
   }
   
   .download-btn {
@@ -127,7 +127,6 @@ body {
   
   .download-btn:hover {
     background-color: #0096c7;
-    transform: translateY(-2px);
   }
   
   .back-btn {
@@ -141,9 +140,9 @@ body {
   
   .ai-btn {
     background-color: #6c5ce7;
-    padding: 10px 16px;
-    font-size: 14px;
-    margin-top: 10px;
+    padding: 12px 20px;
+    font-size: 15px;
+    margin-top: 12px;
   }
   
   .ai-btn:hover {

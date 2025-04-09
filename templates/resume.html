@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Your Resume</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
 </head>
 <body class="animate-fade-in">
 
@@ -20,17 +20,18 @@
     {% endif %}
   {% endwith %}
 
-  <!-- Resume content wrapper -->
+  <!-- Resume content -->
   <div class="resume-container" id="resume-content">
     <div class="resume-header">
       <h1 class="glow-text">{{ name }}</h1>
       <h2>{{ job_title }}</h2>
       <p class="contact-line">
-        {{ email }}{% if linkedin %} &nbsp;|&nbsp; <a href="{{ linkedin }}" target="_blank">LinkedIn</a>{% endif %}
+        {{ email }}{% if linkedin %} &nbsp;|&nbsp;
+        <a href="{{ linkedin }}" target="_blank">LinkedIn</a>{% endif %}
       </p>
     </div>
 
-    <hr>
+    <hr />
 
     <div class="resume-section">
       <h3>Summary</h3>
@@ -60,14 +61,14 @@
 
     <!-- Buttons -->
     <div class="button-group">
-      <a href="#" class="download-btn pulse-btn" onclick="downloadPDF()">Download PDF</a>
-      <a href="/" class="back-btn">Back to Form</a>
+      <a href="#" class="btn download-btn pulse-btn" onclick="downloadPDF()">Download PDF</a>
+      <a href="/" class="btn back-btn">Back to Form</a>
     </div>
 
     <p class="timestamp"><em>Generated on {{ timestamp }}</em></p>
   </div>
 
-  <!-- PDF Generation Script -->
+  <!-- PDF generation -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
   <script>
     function downloadPDF() {
