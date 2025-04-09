@@ -72,30 +72,35 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
   <script>
     function downloadPDF() {
-      const original = document.getElementById('resume-content');
-    
-      // Clone the content
-      const clone = original.cloneNode(true);
-      clone.classList.add('printable');
-    
-      // Hide the clone off-screen
-      clone.style.position = 'absolute';
-      clone.style.left = '-9999px';
-      document.body.appendChild(clone);
-    
-      const options = {
+      const element = document.getElementById('resume-content');
+      if (!element) {
+        alert('Resume content not found!');
+        return;
+      }
+  
+      // Apply a light theme specifically for PDF export
+      element.classList.add('pdf-export');
+  
+      const opt = {
         margin: 0.5,
         filename: 'resume.pdf',
         image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: 2 },
-        jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+        html2canvas: {
+          scale: 2,
+          useCORS: true, // if you have remote assets like fonts/images
+        },
+        jsPDF: {
+          unit: 'in',
+          format: 'letter',
+          orientation: 'portrait',
+        }
       };
-    
-      html2pdf().set(options).from(clone).save().then(() => {
-        document.body.removeChild(clone); // Clean up
+  
+      html2pdf().set(opt).from(element).save().then(() => {
+        // Remove temporary styling after download
+        element.classList.remove('pdf-export');
       });
     }
-    </script>
-    
+  </script>    
 </body>
 </html>

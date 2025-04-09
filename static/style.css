@@ -311,4 +311,15 @@ body {
   #resume-content.printable .timestamp {
     display: none !important;
   }
+  /* Force white background for PDF version */
+.pdf-export {
+    background-color: white !important;
+    color: black !important;
+  }
+  
+  .pdf-export * {
+    color: black !important;
+    background: none !important;
+    box-shadow: none !important;
+  }
   
