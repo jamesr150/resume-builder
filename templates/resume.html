@@ -72,35 +72,35 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
   <script>
     function downloadPDF() {
-      const element = document.getElementById('resume-content');
-      if (!element) {
-        alert('Resume content not found!');
-        return;
-      }
-  
-      // Apply a light theme specifically for PDF export
-      element.classList.add('pdf-export');
-  
-      const opt = {
-        margin: 0.5,
-        filename: 'resume.pdf',
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: {
-          scale: 2,
-          useCORS: true, // if you have remote assets like fonts/images
-        },
-        jsPDF: {
-          unit: 'in',
-          format: 'letter',
-          orientation: 'portrait',
-        }
-      };
-  
-      html2pdf().set(opt).from(element).save().then(() => {
-        // Remove temporary styling after download
-        element.classList.remove('pdf-export');
-      });
+  const element = document.getElementById('resume-content');
+  if (!element) {
+    alert('Resume content not found!');
+    return;
+  }
+
+  element.classList.add('pdf-export');
+
+  const opt = {
+    margin: 0.5,
+    filename: 'resume.pdf',
+    image: { type: 'jpeg', quality: 0.98 },
+    html2canvas: {
+      scale: 2,
+      useCORS: true,
+      backgroundColor: '#1b263b' // 🛡️ your resume background color
+    },
+    jsPDF: {
+      unit: 'in',
+      format: 'letter',
+      orientation: 'portrait'
     }
+  };
+
+  html2pdf().set(opt).from(element).save().then(() => {
+    element.classList.remove('pdf-export');
+  });
+}
+
   </script>    
 </body>
 </html>
