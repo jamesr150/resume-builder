@@ -3,13 +3,12 @@
 ========================= */
 body {
     font-family: 'Inter', sans-serif;
-    background-color: #0d1b2a; /* Dark navy background */
+    background-color: #0d1b2a;
     margin: 0;
     padding: 40px;
-    color: #e0e1dd; /* Soft off-white text */
+    color: #e0e1dd;
   }
   
-  /* Fade-in animation */
   .animate-fade-in {
     animation: fadeIn 0.8s ease-in forwards;
     opacity: 0;
@@ -22,7 +21,7 @@ body {
   }
   
   /* ========================
-     Heading Styles
+     Typography & Headings
   ========================= */
   h1 {
     font-size: 36px;
@@ -45,24 +44,22 @@ body {
   }
   
   /* ========================
-     Form Styles
+     Form Elements
   ========================= */
   form {
     max-width: 600px;
     margin: auto;
     padding: 30px;
-    background: #1b263b; /* Darker navy */
+    background: #1b263b;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0,0,0,0.4);
-    transition: all 0.3s ease-in-out;
   }
   
   form h3 {
-    margin-top: 30px;
-    margin-bottom: 10px;
     font-size: 20px;
     color: #e0e1dd;
     border-bottom: 1px solid #778da9;
+    margin-bottom: 10px;
     padding-bottom: 4px;
   }
   
@@ -72,12 +69,8 @@ body {
     margin-bottom: 5px;
   }
   
-  /* ========================
-     Input Fields
-  ========================= */
   input[type="text"],
-  input[type="email"],
-  textarea {
+  input[type="email"] {
     width: 100%;
     padding: 12px;
     margin-bottom: 20px;
@@ -90,19 +83,31 @@ body {
     transition: box-shadow 0.3s;
   }
   
+  textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    background-color: #2c3e50;
+    color: white;
+    border: 1px solid #3e5c76;
+    border-radius: 6px;
+    font-size: 14px;
+    box-sizing: border-box;
+    resize: none;
+    min-height: 100px;
+    overflow: hidden;
+  }
+  
   input:focus,
   textarea:focus {
-    border: none;
     box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.4);
     outline: none;
   }
   
   /* ========================
-     Submit and Download Buttons
+     Buttons
   ========================= */
-  input[type="submit"],
-  .download-btn {
-    background-color: #00b4d8;
+  .btn {
     color: white;
     padding: 12px 24px;
     border: none;
@@ -111,12 +116,38 @@ body {
     font-size: 16px;
     font-weight: 600;
     transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    display: inline-block;
   }
   
-  input[type="submit"]:hover,
+  .download-btn {
+    background-color: #00b4d8;
+  }
+  
   .download-btn:hover {
     background-color: #0096c7;
     transform: translateY(-2px);
+  }
+  
+  .back-btn {
+    background-color: #0984e3;
+    margin-left: 12px;
+  }
+  
+  .back-btn:hover {
+    background-color: #0773c7;
+  }
+  
+  .ai-btn {
+    background-color: #6c5ce7;
+    padding: 10px 16px;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  
+  .ai-btn:hover {
+    background-color: #5a4acb;
   }
   
   .pulse-btn {
@@ -127,6 +158,33 @@ body {
     0% { box-shadow: 0 0 0 0 rgba(0, 180, 216, 0.6); }
     70% { box-shadow: 0 0 0 10px rgba(0, 180, 216, 0); }
     100% { box-shadow: 0 0 0 0 rgba(0, 180, 216, 0); }
+  }
+  
+  .button-group {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 30px;
+  }
+  
+  /* ========================
+     Resume Container & Layout
+  ========================= */
+  .resume-container {
+    max-width: 720px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #1b263b;
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  }
+  
+  .flash-centered {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #4ade80;
   }
   
   /* ========================
@@ -141,17 +199,8 @@ body {
   }
   
   /* ========================
-     Resume Container & Responsive
+     Responsive Design
   ========================= */
-  .resume-container {
-    max-width: 720px;
-    margin: 40px auto;
-    padding: 30px;
-    background: #1b263b;
-    border-radius: 10px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-  }
-  
   @media screen and (max-width: 600px) {
     body {
       padding: 20px;

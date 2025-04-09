@@ -33,7 +33,7 @@
       <h3>Summary</h3>
       <label>Summary:</label>
       <textarea name="summary" rows="4" placeholder="Write a brief personal summary..."></textarea>
-      <button id="ai-summary-btn" type="button" onclick="generateSummary()" style="margin-top: 8px;">Generate Summary with AI</button>
+      <button id="ai-summary-btn" type="button" class="ai-btn" onclick="generateSummary()">Generate Summary with AI</button>
 
       <h3>Education</h3>
       <textarea name="education" rows="3" placeholder="Schools, degrees..."></textarea>
@@ -47,6 +47,17 @@
   </div>
 
   <script>
+    const summaryBox = document.querySelector('textarea[name="summary"]');
+
+    function autoResizeTextarea(el) {
+      el.style.height = 'auto';
+      el.style.height = el.scrollHeight + 'px';
+    }
+
+    // Auto-resize as user types
+    summaryBox.addEventListener('input', () => autoResizeTextarea(summaryBox));
+
+    // Generate AI summary and auto-expand the box
     async function generateSummary() {
       const button = document.getElementById("ai-summary-btn");
       const jobTitle = document.querySelector('input[name="job_title"]').value;
@@ -69,7 +80,8 @@
 
         const data = await response.json();
         if (data.summary) {
-          document.querySelector('textarea[name="summary"]').value = data.summary;
+          summaryBox.value = data.summary;
+          autoResizeTextarea(summaryBox);
         } else {
           alert('Error: ' + data.error);
         }
