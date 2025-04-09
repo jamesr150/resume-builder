@@ -253,11 +253,11 @@ body {
     display: none;
   }
   /* ========================
-   Printable PDF Styling
+   PDF-only Styling (Isolated)
 ========================= */
-.printable {
-    background: white;
-    color: #1a1a1a;
+#resume-content.printable {
+    background: white !important;
+    color: #1a1a1a !important;
     font-family: 'Inter', sans-serif;
     padding: 40px;
     border-radius: 0;
@@ -266,49 +266,49 @@ body {
     margin: 0 auto;
   }
   
-  .printable h1 {
+  #resume-content.printable h1 {
     font-size: 36px;
-    color: #111;
+    color: #111 !important;
     text-align: center;
     margin-bottom: 8px;
   }
   
-  .printable h2 {
+  #resume-content.printable h2 {
     font-size: 20px;
     text-align: center;
     margin-bottom: 20px;
     font-weight: 400;
-    color: #444;
+    color: #444 !important;
   }
   
-  .printable h3 {
+  #resume-content.printable h3 {
     font-size: 16px;
-    color: #333;
+    color: #333 !important;
     margin-top: 30px;
     border-bottom: 1px solid #ccc;
     padding-bottom: 6px;
   }
   
-  .printable p,
-  .printable li {
-    color: #222;
+  #resume-content.printable p,
+  #resume-content.printable li {
+    color: #222 !important;
     font-size: 14px;
     line-height: 1.6;
   }
   
-  .printable ul {
+  #resume-content.printable ul {
     padding-left: 20px;
     margin-top: 6px;
   }
   
-  .printable .contact-line {
+  #resume-content.printable .contact-line {
     text-align: center;
     margin-bottom: 16px;
-    color: #333;
+    color: #333 !important;
   }
   
-  .printable .button-group,
-  .printable .timestamp {
-    display: none; /* hide buttons and timestamp in PDF */
+  #resume-content.printable .button-group,
+  #resume-content.printable .timestamp {
+    display: none !important;
   }
   
