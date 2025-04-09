@@ -13,6 +13,9 @@
     <p class="ai-credit">Powered by AI</p>
 
     <form method="POST" action="/resume">
+      <div id="spinner" class="spinner-overlay hidden">
+        <div class="spinner"></div>
+      </div>      
       <h3>Contact Info</h3>
       <label>Name:</label>
       <input type="text" name="name" placeholder="e.g., James Rooney" />
@@ -57,39 +60,43 @@
     summaryBox.addEventListener('input', () => autoResizeTextarea(summaryBox));
 
     async function generateSummary() {
-      const button = document.getElementById("ai-summary-btn");
-      const jobTitle = document.querySelector('input[name="job_title"]').value;
-      const experience = document.querySelector('textarea[name="experience"]').value;
+  const button = document.getElementById("ai-summary-btn");
+  const jobTitle = document.querySelector('input[name="job_title"]').value;
+  const experience = document.querySelector('textarea[name="experience"]').value;
+  const spinner = document.getElementById("spinner");
 
-      if (!jobTitle || !experience) {
-        alert("Please fill in job title and experience before generating a summary.");
-        return;
-      }
+  if (!jobTitle || !experience) {
+    alert("Please fill in job title and experience before generating a summary.");
+    return;
+  }
 
-      button.disabled = true;
-      button.textContent = "Generating...";
+  button.disabled = true;
+  button.textContent = "Generating...";
+  spinner.classList.remove("hidden");
 
-      try {
-        const response = await fetch('/generate-summary', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ job_title: jobTitle, experience: experience })
-        });
+  try {
+    const response = await fetch('/generate-summary', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ job_title: jobTitle, experience: experience })
+    });
 
-        const data = await response.json();
-        if (data.summary) {
-          summaryBox.value = data.summary;
-          autoResizeTextarea(summaryBox);
-        } else {
-          alert('Error: ' + data.error);
-        }
-      } catch (error) {
-        alert("Something went wrong. Please try again later.");
-      } finally {
-        button.disabled = false;
-        button.textContent = "Generate Summary with AI";
-      }
+    const data = await response.json();
+    if (data.summary) {
+      const summaryBox = document.querySelector('textarea[name="summary"]');
+      summaryBox.value = data.summary;
+      autoResizeTextarea(summaryBox);
+    } else {
+      alert('Error: ' + data.error);
     }
+  } catch (error) {
+    alert("Something went wrong. Please try again later.");
+  } finally {
+    button.disabled = false;
+    button.textContent = "Generate Summary with AI";
+    spinner.classList.add("hidden");
+  }
+}
   </script>
 </body>
 </html>
