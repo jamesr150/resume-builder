@@ -9,15 +9,18 @@ body {
     color: #e0e1dd;
   }
   
+  html, body {
+    scroll-behavior: auto !important;
+    overflow-anchor: none !important;
+  }
+  
   .animate-fade-in {
     animation: fadeIn 0.8s ease-in forwards;
     opacity: 0;
   }
   
   @keyframes fadeIn {
-    to {
-      opacity: 1;
-    }
+    to { opacity: 1; }
   }
   
   /* ========================
@@ -166,6 +169,15 @@ body {
     margin-top: 30px;
   }
   
+  /* Hide in print/PDF */
+  .no-print {
+    display: block;
+  }
+  
+  .pdf-export .no-print {
+    display: none;
+  }
+  
   /* ========================
      Resume Container & Layout
   ========================= */
@@ -184,6 +196,39 @@ body {
     font-size: 16px;
     font-weight: 500;
     color: #4ade80;
+  }
+  
+  /* ========================
+     Spinner
+  ========================= */
+  .spinner-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(13, 27, 42, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  
+  .spinner {
+    border: 5px solid #415a77;
+    border-top: 5px solid #00b4d8;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 0.9s linear infinite;
+  }
+  
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+  
+  .hidden {
+    display: none;
   }
   
   /* ========================
@@ -223,39 +268,35 @@ body {
       font-size: 12px;
     }
   }
-  .spinner-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(13, 27, 42, 0.8); /* dark overlay */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-  }
   
-  .spinner {
-    border: 5px solid #415a77;
-    border-top: 5px solid #00b4d8;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    animation: spin 0.9s linear infinite;
-  }
-  
-  @keyframes spin {
-    to { transform: rotate(360deg); }
-  }
-  
-  .hidden {
-    display: none;
-  }
   /* ========================
-   PDF-only Styling (Isolated)
-========================= */
-#resume-content.printable {
+     PDF Export Styling
+  ========================= */
+  .resume-pdf {
+    background-color: #ffffff;
+    color: #000;
+    padding: 40px;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .resume-pdf .resume-container {
+    background-color: white;
+    box-shadow: none;
+  }
+  
+  .pdf-export {
+    background-color: white !important;
+    color: black !important;
+  }
+  
+  .pdf-export * {
+    color: black !important;
+    background: none !important;
+    box-shadow: none !important;
+  }
+  
+  /* Refined printable container */
+  #resume-content.printable {
     background: white !important;
     color: #1a1a1a !important;
     font-family: 'Inter', sans-serif;
@@ -310,23 +351,5 @@ body {
   #resume-content.printable .button-group,
   #resume-content.printable .timestamp {
     display: none !important;
-  }
-  /* Force white background for PDF version */
-.pdf-export {
-    background-color: white !important;
-    color: black !important;
-  }
-  
-  .pdf-export * {
-    color: black !important;
-    background: none !important;
-    box-shadow: none !important;
-  }
-  body {
-    background-color: #0d1b2a;
-  }
-  html, body {
-    scroll-behavior: auto !important;
-    overflow-anchor: none !important;
   }
   
