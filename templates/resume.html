@@ -73,6 +73,8 @@
   <script>
     function downloadPDF() {
       const element = document.getElementById('resume-content');
+      element.classList.add('printable'); // apply PDF-specific styles
+  
       const options = {
         margin: 0.5,
         filename: 'resume.pdf',
@@ -80,8 +82,11 @@
         html2canvas: { scale: 2 },
         jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
       };
-      html2pdf().set(options).from(element).save();
+  
+      html2pdf().set(options).from(element).save().then(() => {
+        element.classList.remove('printable'); // revert to normal
+      });
     }
-  </script>
+  </script>  
 </body>
 </html>
