@@ -6,6 +6,13 @@
   <title>Your Resume</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  <style>
+    @media print {
+      body {
+        background: white !important;
+      }
+    }
+  </style>
 </head>
 <body class="animate-fade-in">
 
@@ -61,7 +68,7 @@
 
     <!-- Buttons -->
     <div class="button-group no-print">
-      <a href="#" class="btn download-btn pulse-btn" onclick="downloadPDF()">Download PDF</a>
+      <a href="#" class="btn download-btn pulse-btn" onclick="downloadPDF(event)">Download PDF</a>
       <a href="/" class="btn back-btn">Back to Form</a>
     </div>
 
@@ -71,14 +78,15 @@
   <!-- PDF generation -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
   <script>
-    function downloadPDF() {
+    function downloadPDF(event) {
+      event.preventDefault(); // Prevent anchor default behavior
+
       const element = document.getElementById('resume-content');
       if (!element) {
         alert('Resume content not found!');
         return;
       }
 
-      // Add printable class before generating PDF
       element.classList.add('printable', 'pdf-export');
 
       const opt = {
