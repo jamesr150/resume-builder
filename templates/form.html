@@ -46,6 +46,7 @@
       <input type="text" name="skills" placeholder="Python, Flask, SQL, Communication" />
 
       <input type="submit" class="btn download-btn pulse-btn" value="Generate Resume" />
+      <button type="button" class="btn clear-btn" onclick="clearForm()">Clear Form</button>
     </form>
   </div>
 
@@ -123,6 +124,20 @@
       }
     });
   </script>
+  <script>
+    function clearForm() {
+      // Clear form inputs
+      document.querySelector("form").reset();
+      
+      // Clear localStorage
+      localStorage.removeItem("resumeFormData");
+  
+      // Also reset any manually set values (like textareas with auto-resize)
+      const textareas = document.querySelectorAll("textarea");
+      textareas.forEach(el => el.style.height = "auto");
+    }
+  </script>
+  
   <footer class="app-footer">
     <p>
       Built by <strong>James Rooney</strong> ·

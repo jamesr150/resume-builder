@@ -201,6 +201,14 @@ body {
     }
   }
   
+  .clear-btn {
+    background-color: #ef476f;
+    margin-left: 12px;
+  }
+  
+  .clear-btn:hover {
+    background-color: #d42f56;
+  }
   
   
   /* Hide in print/PDF */
