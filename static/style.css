@@ -386,4 +386,27 @@ body {
   #resume-content.printable .timestamp {
     display: none !important;
   }
+  /* ========================
+   Footer Styling
+========================= */
+.app-footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px 10px;
+    font-size: 14px;
+    color: #a8dadc;
+    background-color: transparent;
+  }
+  
+  .app-footer a {
+    color: #00b4d8;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .app-footer a:hover {
+    color: #0096c7;
+    text-decoration: underline;
+  }
   
