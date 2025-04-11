@@ -6,23 +6,30 @@
   <title>Your Resume</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+
   <style>
     @media print {
       body {
         background: white !important;
       }
     }
+
+    body,
+    .resume-container,
+    .resume-container * {
+      transition: background-color 0.3s, color 0.3s;
+    }
   </style>
- 
 </head>
+
 <body class="animate-fade-in">
+  <!-- Theme Toggle -->
   <div class="theme-toggle">
     <label class="switch">
       <input type="checkbox" id="themeSwitcher" />
       <span class="slider"></span>
     </label>
   </div>
-  
 
   <!-- Flash message -->
   {% with messages = get_flashed_messages() %}
@@ -83,11 +90,19 @@
     <p class="timestamp no-print"><em>Generated on {{ timestamp }}</em></p>
   </div>
 
+  <!-- Footer -->
+  <footer class="app-footer">
+    <p>
+      Built by <strong>James Rooney</strong> ·
+      <a href="https://github.com/jamesr150/resume-builder" target="_blank">View on GitHub</a>
+    </p>
+  </footer>
+
   <!-- PDF generation -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
   <script>
     function downloadPDF(event) {
-      event.preventDefault(); // Prevent anchor default behavior
+      event.preventDefault();
 
       const element = document.getElementById('resume-content');
       if (!element) {
@@ -117,28 +132,20 @@
         element.classList.remove('pdf-export', 'printable');
       });
     }
-  </script>    
-  <footer class="app-footer">
-    <p>
-      Built by <strong>James Rooney</strong> ·
-      <a href="https://github.com/jamesr150/resume-builder" target="_blank">
-        View on GitHub
-      </a>
-    </p>
-  </footer>  
+  </script>
+
+  <!-- Theme sync logic -->
   <script>
     const themeSwitcher = document.getElementById('themeSwitcher');
-  
-    // Apply saved theme on load
-    document.addEventListener("DOMContentLoaded", () => {
-      const saved = localStorage.getItem('theme');
-      if (saved === 'light') {
-        document.body.classList.add('light-mode');
-        if (themeSwitcher) themeSwitcher.checked = true;
-      }
-    });
-  
-    // Toggle and persist theme
+
+    // Apply theme immediately on page load
+    const saved = localStorage.getItem('theme');
+    if (saved === 'light') {
+      document.body.classList.add('light-mode');
+      if (themeSwitcher) themeSwitcher.checked = true;
+    }
+
+    // Listen for theme toggle
     if (themeSwitcher) {
       themeSwitcher.addEventListener('change', () => {
         document.body.classList.toggle('light-mode');
@@ -146,6 +153,5 @@
       });
     }
   </script>
-  
 </body>
 </html>

@@ -607,3 +607,38 @@ body.light-mode {
 .app-footer {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
+/* ========================
+   Light Mode Enhancements
+========================= */
+body.light-mode .resume-header {
+    background: linear-gradient(90deg, #e0e0e0, #f9f9f9);
+    color: #1a1a1a;
+  }
+  
+  body.light-mode .resume-section {
+    background-color: #fafafa;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    border-radius: 8px;
+  }
+  
+  body.light-mode .resume-section:hover {
+    box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+  }
+  
+  body.light-mode .btn:hover {
+    box-shadow: 0 0 8px rgba(0, 180, 216, 0.4);
+  }
+  
+  body.light-mode a {
+    color: #007acc;
+  }
+  
+  body.light-mode a:hover {
+    text-decoration: underline;
+    color: #005f99;
+  }
+  
+  body.light-mode .timestamp {
+    color: #666;
+  }
+  
