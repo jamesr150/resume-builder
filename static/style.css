@@ -3,7 +3,7 @@
 ========================= */
 body {
     font-family: 'Inter', sans-serif;
-    background-color: #0d1b2a;
+    background-color: #121212;
     margin: 0;
     padding: 40px;
     color: #e0e1dd;
@@ -13,391 +13,78 @@ body {
     scroll-behavior: auto !important;
     overflow-anchor: none !important;
   }
-  
-  .animate-fade-in {
-    animation: fadeIn 0.8s ease-in forwards;
-    opacity: 0;
-  }
-  
-  @keyframes fadeIn {
-    to { opacity: 1; }
-  }
-  
-  /* ========================
-     Typography & Headings
-  ========================= */
-  h1 {
-    font-size: 36px;
-    font-weight: 700;
-    color: #e0e1dd;
-    text-align: center;
-    margin-bottom: 8px;
-  }
-  
-  .glow-text {
-    text-shadow: 0 0 6px rgba(255, 255, 255, 0.1);
-  }
-  
-  h2, h3 {
-    font-size: 22px;
-    color: #e0e1dd;
-    margin-top: 30px;
-    border-bottom: 1px solid #415a77;
-    padding-bottom: 6px;
-  }
-  
-  /* ========================
-     Form Elements
-  ========================= */
-  form {
-    max-width: 600px;
-    margin: auto;
-    padding: 30px;
-    background: #1b263b;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.4);
-  }
-  
-  form h3 {
-    font-size: 20px;
-    color: #e0e1dd;
-    border-bottom: 1px solid #778da9;
-    margin-bottom: 10px;
-    padding-bottom: 4px;
-  }
-  
-  label {
-    font-weight: 600;
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  input[type="text"],
-  input[type="email"],
-  textarea {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 20px;
-    background-color: #2c3e50;
-    border: 1px solid #3e5c76;
-    color: #e0e1dd;
-    border-radius: 6px;
-    font-size: 16px;
-    box-sizing: border-box;
-    transition: box-shadow 0.3s;
-  }
-  
-  input::placeholder,
-  textarea::placeholder {
-    color: #9db2bf;
-  }
-  
-  input:focus,
-  textarea:focus {
-    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.4);
-    outline: none;
-  }
-  
-  /* ========================
-     Buttons
-  ========================= */
-  .btn,
-  input[type="submit"] {
-    color: white;
-    padding: 12px 24px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: 600;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    text-decoration: none;
-    display: inline-block;
-    text-align: center;
-    background-color: #00b4d8;
-  }
-  
-  .btn:hover,
-  input[type="submit"]:hover {
-    background-color: #0096c7;
-    transform: translateY(-2px);
-  }
-  
-  .download-btn {
-    background-color: #00b4d8;
-  }
-  
-  .download-btn:hover {
-    background-color: #0096c7;
-  }
-  
-  .back-btn {
-    background-color: #0984e3;
-    margin-left: 12px;
-  }
-  
-  .back-btn:hover {
-    background-color: #0773c7;
-  }
-  
-  .ai-btn {
-    background-color: #6c5ce7;
-    padding: 12px 20px;
-    font-size: 15px;
-    margin-top: 12px;
-  }
-  
-  .ai-btn:hover {
-    background-color: #5a4acb;
-  }
-  
-  .pulse-btn {
-    animation: pulse 2s infinite;
-  }
-  
-  @keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(0, 180, 216, 0.6); }
-    70% { box-shadow: 0 0 0 10px rgba(0, 180, 216, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(0, 180, 216, 0); }
-  }
-  
-  .button-group {
-    display: flex;
-    justify-content: center;
-    gap: 16px;
-    flex-wrap: wrap; /* <- allows wrapping if necessary */
-    margin-top: 30px;
-  }
 
-  .button-group .btn {
-    width: auto;
-    min-width: 140px;
-    max-width: 100%;
-    padding: 12px 20px;
-    font-size: 15px;
-    white-space: nowrap;
-  }
-  
-  .button-group {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .button-group .btn {
-    margin-bottom: 10px;
-  }
-  
-  
-  @media screen and (max-width: 600px) {
-    .button-group {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .button-group .btn {
-      width: 80%;
-      margin: 6px 0;
-    }
-  }
-  
-  .clear-btn {
-    background-color: #ef476f;
-    margin-left: 12px;
-  }
-  
-  .clear-btn:hover {
-    background-color: #d42f56;
-  }
-  
-  
-  /* Hide in print/PDF */
-  .no-print {
-    display: block;
-  }
-  
-  .pdf-export .no-print {
-    display: none;
-  }
-  
-  /* ========================
-     Resume Container & Layout
-  ========================= */
   .resume-container {
     max-width: 720px;
     margin: 40px auto;
     padding: 30px;
-    background: #1b263b;
+    background: #1e1e1e;
     border-radius: 10px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
   }
-  
-  .flash-centered {
-    text-align: center;
-    margin-top: 20px;
-    font-size: 16px;
+
+  .resume-header {
+    background: linear-gradient(90deg, #1e1e1e, #121212);
+    padding: 20px;
+    border-radius: 8px;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    background-color: #2c2c2c;
+    border: 1px solid #444;
+    color: #e0e1dd;
+  }
+
+  input:focus,
+  textarea:focus {
+    background-color: #2c2c2c;
+    box-shadow: 0 0 0 3px rgba(0, 180, 216, 0.4);
+    outline: none;
+  }
+
+  .resume-section {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 24px;
+    border-top: 1px solid transparent;
+    border-image: linear-gradient(to right, #00b4d8, transparent);
+    border-image-slice: 1;
+  }
+
+  .resume-section:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+
+  .glow-text {
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.1);
+  }
+
+  h1, h2, h3 {
+    color: #e0e1dd;
+    letter-spacing: 0.5px;
+  }
+
+  a {
+    color: #00b4d8;
+    text-decoration: none;
     font-weight: 500;
-    color: #4ade80;
   }
-  
-  /* ========================
-     Spinner
-  ========================= */
-  .spinner-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(13, 27, 42, 0.8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
+
+  a:hover {
+    text-decoration: underline;
   }
-  
-  .spinner {
-    border: 5px solid #415a77;
-    border-top: 5px solid #00b4d8;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    animation: spin 0.9s linear infinite;
+
+  ::placeholder {
+    color: #b0bec5;
+    opacity: 1;
   }
-  
-  @keyframes spin {
-    to { transform: rotate(360deg); }
-  }
-  
-  .hidden {
-    display: none;
-  }
-  
-  /* ========================
-     AI Credit Line
-  ========================= */
-  .ai-credit {
-    text-align: center;
-    margin-top: 6px;
-    font-size: 14px;
-    color: #a8dadc;
-    font-style: italic;
-  }
-  
-  /* ========================
-     Responsive Design
-  ========================= */
-  @media screen and (max-width: 600px) {
-    body {
-      padding: 20px;
-    }
-  
-    form,
-    .resume-container {
-      padding: 20px;
-    }
-  
-    input,
-    textarea {
-      font-size: 14px;
-    }
-  
-    h1 {
-      font-size: 24px;
-    }
-  
-    .ai-credit {
-      font-size: 12px;
-    }
-  }
-  
-  /* ========================
-     PDF Export Styling
-  ========================= */
-  .resume-pdf {
-    background-color: #ffffff;
-    color: #000;
-    padding: 40px;
-    font-family: 'Inter', sans-serif;
-  }
-  
-  .resume-pdf .resume-container {
-    background-color: white;
-    box-shadow: none;
-  }
-  
-  .pdf-export {
-    background-color: white !important;
-    color: black !important;
-  }
-  
-  .pdf-export * {
-    color: black !important;
-    background: none !important;
-    box-shadow: none !important;
-  }
-  
-  /* Refined printable container */
-  #resume-content.printable {
-    background: white !important;
-    color: #1a1a1a !important;
-    font-family: 'Inter', sans-serif;
-    padding: 40px;
-    border-radius: 0;
-    box-shadow: none;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  
-  #resume-content.printable h1 {
-    font-size: 36px;
-    color: #111 !important;
-    text-align: center;
-    margin-bottom: 8px;
-  }
-  
-  #resume-content.printable h2 {
-    font-size: 20px;
-    text-align: center;
-    margin-bottom: 20px;
-    font-weight: 400;
-    color: #444 !important;
-  }
-  
-  #resume-content.printable h3 {
-    font-size: 16px;
-    color: #333 !important;
-    margin-top: 30px;
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 6px;
-  }
-  
-  #resume-content.printable p,
-  #resume-content.printable li {
-    color: #222 !important;
-    font-size: 14px;
-    line-height: 1.6;
-  }
-  
-  #resume-content.printable ul {
-    padding-left: 20px;
-    margin-top: 6px;
-  }
-  
-  #resume-content.printable .contact-line {
-    text-align: center;
-    margin-bottom: 16px;
-    color: #333 !important;
-  }
-  
-  #resume-content.printable .button-group,
-  #resume-content.printable .timestamp {
-    display: none !important;
-  }
-  /* ========================
-   Footer Styling
-========================= */
-.app-footer {
+
+  .app-footer {
     text-align: center;
     margin-top: 40px;
     padding: 20px 10px;
@@ -405,240 +92,76 @@ body {
     color: #a8dadc;
     background-color: transparent;
   }
-  
+
   .app-footer a {
     color: #00b4d8;
     font-weight: 600;
     text-decoration: none;
     transition: color 0.3s ease;
   }
-  
+
   .app-footer a:hover {
     color: #0096c7;
     text-decoration: underline;
   }
-  .resume-container {
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-    transition: box-shadow 0.3s ease;
+
+  body,
+  .resume-container,
+  .app-footer {
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
-  .resume-container:hover {
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-  }
-  .btn:hover {
-    box-shadow: 0 0 8px rgba(0, 180, 216, 0.5);
-  }
-  .resume-section {
-    border-top: 1px solid transparent;
-    border-image: linear-gradient(to right, #00b4d8, transparent);
-    border-image-slice: 1;
-    padding-top: 24px;
-  }
-  * {
-    transition: all 0.25s ease-in-out;
-  }
-  @media screen and (max-width: 480px) {
-    .button-group {
-      flex-direction: column;
-      gap: 12px;
-    }
-  
-    .btn {
-      width: 100%;
-    }
-  }
-  input:focus,
-textarea:focus {
-  box-shadow: 0 0 0 3px rgba(0, 180, 216, 0.4);
-  background-color: #2c3e50;
-}
-.timestamp {
-    font-size: 12px;
-    color: #8899a6;
-    text-align: right;
-    margin-top: 20px;
-  }
-  .resume-section {
-    background: rgba(255, 255, 255, 0.03);
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 24px;
-  }
-  h1, h2, h3 {
-    letter-spacing: 0.5px;
-  }
-  input:focus,
-textarea:focus {
-  outline: none;
-  box-shadow: 0 0 8px rgba(0, 180, 216, 0.6);
-}
-.resume-section:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  }
-  .resume-header {
-    background: linear-gradient(90deg, #1b263b, #0d1b2a);
-    padding: 20px;
-    border-radius: 8px;
-  }
-  a {
-    color: #00b4d8;
-    text-decoration: none;
-    font-weight: 500;
-  }
-  a:hover {
-    text-decoration: underline;
-  }
-  ::placeholder {
-    color: #b0bec5;
-    opacity: 1;
-  }
-/* Theme toggle button */
-.theme-toggle {
-    position: fixed;
-    top: 16px;
-    right: 20px;
-    z-index: 999;
-  }
-  
-  /* Switch styling */
-  .switch {
-    position: relative;
-    display: inline-block;
-    width: 48px;
-    height: 24px;
-  }
-  .switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-  .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0; left: 0;
-    right: 0; bottom: 0;
-    background-color: #ccc;
-    transition: 0.4s;
-    border-radius: 24px;
-  }
-  .slider:before {
-    position: absolute;
-    content: "";
-    height: 18px;
-    width: 18px;
-    left: 3px;
-    bottom: 3px;
-    background-color: white;
-    transition: 0.4s;
-    border-radius: 50%;
-  }
-  input:checked + .slider {
-    background-color: #00b4d8;
-  }
-  input:checked + .slider:before {
-    transform: translateX(24px);
-  }
-  
-  /* Light theme */
+
   body.light-mode {
-    background-color: #f5f5f5;
-    color: #1b1b1b;
-  }
-  body.light-mode .resume-container,
-  body.light-mode form {
-    background-color: #ffffff;
-    color: #1b1b1b;
-  }
-  body.light-mode input,
-  body.light-mode textarea {
-    background-color: #f0f0f0;
-    color: #1b1b1b;
-  }
-  body.light-mode input::placeholder,
-  body.light-mode textarea::placeholder {
-    color: #777;
-  }
-  /* Light Mode Styling */
-body.light-mode {
     background-color: #f4f4f4;
     color: #111;
   }
-  
+
   body.light-mode .resume-container {
     background-color: white;
     color: #1a1a1a;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
   }
-  
+
   body.light-mode .resume-container h1,
   body.light-mode .resume-container h2,
   body.light-mode .resume-container h3 {
     color: #1a1a1a;
   }
-  
+
   body.light-mode .resume-container p,
   body.light-mode .resume-container li {
     color: #333;
   }
-  
-  body.light-mode hr {
-    border-color: #ccc;
-  }
-  
-  body.light-mode .download-btn {
-    background-color: #00b4d8;
-    color: white;
-  }
-  
-  body.light-mode .back-btn {
-    background-color: #0077cc;
-    color: white;
-  }
-  
-  body.light-mode .app-footer {
-    color: #555;
-  }
-  
-  body.light-mode .app-footer a {
-    color: #0077cc;
-  }
-  body,
-.resume-container,
-.app-footer {
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-/* ========================
-   Light Mode Enhancements
-========================= */
-body.light-mode .resume-header {
+
+  body.light-mode .resume-header {
     background: linear-gradient(90deg, #e0e0e0, #f9f9f9);
     color: #1a1a1a;
   }
-  
+
+  body.light-mode input,
+  body.light-mode textarea {
+    background-color: #f0f0f0;
+    color: #1b1b1b;
+  }
+
+  body.light-mode input::placeholder,
+  body.light-mode textarea::placeholder {
+    color: #777;
+  }
+
+  body.light-mode .app-footer {
+    color: #555;
+  }
+
+  body.light-mode .app-footer a {
+    color: #0077cc;
+  }
+
   body.light-mode .resume-section {
     background-color: #fafafa;
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    border-radius: 8px;
   }
-  
+
   body.light-mode .resume-section:hover {
     box-shadow: 0 4px 14px rgba(0,0,0,0.1);
   }
-  
-  body.light-mode .btn:hover {
-    box-shadow: 0 0 8px rgba(0, 180, 216, 0.4);
-  }
-  
-  body.light-mode a {
-    color: #007acc;
-  }
-  
-  body.light-mode a:hover {
-    text-decoration: underline;
-    color: #005f99;
-  }
-  
-  body.light-mode .timestamp {
-    color: #666;
-  }
-  
