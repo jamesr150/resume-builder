@@ -558,4 +558,52 @@ textarea:focus {
   body.light-mode textarea::placeholder {
     color: #777;
   }
+  /* Light Mode Styling */
+body.light-mode {
+    background-color: #f4f4f4;
+    color: #111;
+  }
   
+  body.light-mode .resume-container {
+    background-color: white;
+    color: #1a1a1a;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  body.light-mode .resume-container h1,
+  body.light-mode .resume-container h2,
+  body.light-mode .resume-container h3 {
+    color: #1a1a1a;
+  }
+  
+  body.light-mode .resume-container p,
+  body.light-mode .resume-container li {
+    color: #333;
+  }
+  
+  body.light-mode hr {
+    border-color: #ccc;
+  }
+  
+  body.light-mode .download-btn {
+    background-color: #00b4d8;
+    color: white;
+  }
+  
+  body.light-mode .back-btn {
+    background-color: #0077cc;
+    color: white;
+  }
+  
+  body.light-mode .app-footer {
+    color: #555;
+  }
+  
+  body.light-mode .app-footer a {
+    color: #0077cc;
+  }
+  body,
+.resume-container,
+.app-footer {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
