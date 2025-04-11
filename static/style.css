@@ -8,12 +8,12 @@ body {
     padding: 40px;
     color: #e0e1dd;
   }
-  
+
   html, body {
     scroll-behavior: auto !important;
     overflow-anchor: none !important;
   }
-  
+
   .resume-container {
     max-width: 720px;
     margin: 40px auto;
@@ -169,4 +169,51 @@ body {
 
   body.light-mode .resume-section:hover {
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  }
+
+  .btn,
+  input[type="submit"],
+  .download-btn,
+  .back-btn {
+    background-color: #00b4d8;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+  }
+
+  .btn:hover,
+  input[type="submit"]:hover,
+  .download-btn:hover,
+  .back-btn:hover {
+    background-color: #0096c7;
+    transform: translateY(-2px);
+    box-shadow: 0 0 8px rgba(0, 180, 216, 0.5);
+  }
+
+  .back-btn {
+    background-color: #0984e3;
+  }
+
+  .back-btn:hover {
+    background-color: #0773c7;
+  }
+
+  .ai-btn {
+    background-color: #6c5ce7;
+    padding: 12px 20px;
+    font-size: 15px;
+    margin-top: 12px;
+  }
+
+  .ai-btn:hover {
+    background-color: #5a4acb;
   }
