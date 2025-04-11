@@ -16,6 +16,13 @@
  
 </head>
 <body class="animate-fade-in">
+  <div class="theme-toggle">
+    <label class="switch">
+      <input type="checkbox" id="themeSwitcher" />
+      <span class="slider"></span>
+    </label>
+  </div>
+  
 
   <!-- Flash message -->
   {% with messages = get_flashed_messages() %}
@@ -119,5 +126,26 @@
       </a>
     </p>
   </footer>  
+  <script>
+    const themeSwitcher = document.getElementById('themeSwitcher');
+  
+    // Apply saved theme on load
+    document.addEventListener("DOMContentLoaded", () => {
+      const saved = localStorage.getItem('theme');
+      if (saved === 'light') {
+        document.body.classList.add('light-mode');
+        if (themeSwitcher) themeSwitcher.checked = true;
+      }
+    });
+  
+    // Toggle and persist theme
+    if (themeSwitcher) {
+      themeSwitcher.addEventListener('change', () => {
+        document.body.classList.toggle('light-mode');
+        localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
+      });
+    }
+  </script>
+  
 </body>
 </html>
