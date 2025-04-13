@@ -241,4 +241,15 @@ input[type="submit"]:hover,
     transform: scale(1.2);
     color: #0096c7;
   }
+  .clear-btn {
+    background-color: #ef476f; /* red-pink */
+    color: white;
+    margin-left: 12px;
+  }
+  
+  .clear-btn:hover {
+    background-color: #d42f56;
+    transform: translateY(-2px);
+    box-shadow: 0 0 8px rgba(239, 71, 111, 0.5);
+  }
   
