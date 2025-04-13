@@ -252,11 +252,7 @@ input[type="submit"]:hover,
     transform: translateY(-2px);
     box-shadow: 0 0 8px rgba(239, 71, 111, 0.5);
   }
-  .form-header {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
+ 
   .ai-credit {
     font-size: 14px;
     font-style: italic;
@@ -285,4 +281,14 @@ input[type="submit"]:hover,
       transform: translateY(0);
     }
   }
-    
+  .form-header {
+    max-width: 600px;
+    margin: 0 auto 20px auto;
+    text-align: center;
+  }
+  
+  form {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
