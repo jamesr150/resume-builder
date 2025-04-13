@@ -268,11 +268,21 @@ input[type="submit"]:hover,
     -webkit-text-fill-color: transparent;
   }
   
-  .ai-credit i {
-    color: #facc15;
-    margin-right: 6px;
-    animation: pulseBolt 1.8s infinite ease-in-out;
+  .ai-credit {
+    text-align: center;
+    font-size: 17px;
+    font-weight: 500;
+    font-style: italic;
+    margin-top: 12px;
+    line-height: 1.5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    color: #00b4d8;
+    background: none;
   }
+  
   
   
   @keyframes fadeInUp {
