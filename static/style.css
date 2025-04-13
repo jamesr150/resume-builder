@@ -217,3 +217,11 @@ input[type="submit"]:hover,
 .ai-btn:hover {
     background-color: #5a4acb;
 }
+.flash-centered {
+    text-align: center;
+    margin: 20px auto;
+    font-size: 16px;
+    font-weight: 500;
+    color: #4ade80; /* Tailwind green-400 */
+  }
+  
