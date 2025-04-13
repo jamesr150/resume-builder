@@ -254,22 +254,26 @@ input[type="submit"]:hover,
   }
  
   .ai-credit {
-    font-size: 14px;
+    text-align: center;
+    font-size: 16px; /* slightly larger */
+    font-weight: 500;
     font-style: italic;
     color: #00b4d8;
-    margin-top: 6px;
-    letter-spacing: 0.5px;
-    opacity: 0.85;
+    margin-top: 12px;
+    position: relative;
+    display: inline-block;
+    animation: fadeInUp 0.8s ease-out;
+    background: linear-gradient(to right, #00b4d8, #5eead4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
-  .ai-credit {
-    font-size: 14px;
-    font-style: italic;
-    color: #00b4d8;
-    margin-top: 6px;
-    letter-spacing: 0.5px;
-    opacity: 0.85;
-    animation: fadeInUp 0.8s ease-in-out;
+  
+  .ai-credit i {
+    color: #facc15;
+    margin-right: 6px;
+    animation: pulseBolt 1.8s infinite ease-in-out;
   }
+  
   
   @keyframes fadeInUp {
     from {
@@ -290,5 +294,15 @@ input[type="submit"]:hover,
   form {
     max-width: 600px;
     margin: 0 auto;
+  }
+  @keyframes pulseBolt {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.2);
+      opacity: 0.6;
+    }
   }
   
