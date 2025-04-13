@@ -274,7 +274,6 @@ input[type="submit"]:hover,
     animation: pulseBolt 1.5s infinite;
   }
   
-
   
   @keyframes fadeInUp {
     from {
