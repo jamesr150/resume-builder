@@ -224,4 +224,21 @@ input[type="submit"]:hover,
     font-weight: 500;
     color: #4ade80; /* Tailwind green-400 */
   }
+  .theme-toggle-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    color: #00b4d8;
+    z-index: 1000;
+    transition: transform 0.2s ease, color 0.2s ease;
+  }
+  
+  .theme-toggle-btn:hover {
+    transform: scale(1.2);
+    color: #0096c7;
+  }
   

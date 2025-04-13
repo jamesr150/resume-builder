@@ -6,6 +6,8 @@
   <title>Your Resume</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 
   <style>
     @media print {
@@ -24,12 +26,10 @@
 
 <body class="animate-fade-in">
   <!-- Theme Toggle -->
-  <div class="theme-toggle">
-    <label class="switch">
-      <input type="checkbox" id="themeSwitcher" />
-      <span class="slider"></span>
-    </label>
-  </div>
+  <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle Theme">
+    <i id="themeIcon" class="fas fa-moon"></i>
+  </button>
+  
 
   <!-- Flash message -->
   {% with messages = get_flashed_messages() %}
@@ -153,5 +153,25 @@
       });
     }
   </script>
+  <script>
+    const toggleBtn = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+  
+    document.addEventListener("DOMContentLoaded", () => {
+      const saved = localStorage.getItem('theme');
+      if (saved === 'light') {
+        document.body.classList.add('light-mode');
+        themeIcon.classList.replace('fa-moon', 'fa-sun');
+      }
+    });
+  
+    toggleBtn.addEventListener('click', () => {
+      const isLight = document.body.classList.toggle('light-mode');
+      themeIcon.classList.toggle('fa-moon', !isLight);
+      themeIcon.classList.toggle('fa-sun', isLight);
+      localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    });
+  </script>
+  
 </body>
 </html>
