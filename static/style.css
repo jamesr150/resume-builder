@@ -255,22 +255,7 @@ input[type="submit"]:hover,
  
   .ai-credit {
     text-align: center;
-    font-size: 16px; /* slightly larger */
-    font-weight: 500;
-    font-style: italic;
-    color: #00b4d8;
-    margin-top: 12px;
-    position: relative;
-    display: inline-block;
-    animation: fadeInUp 0.8s ease-out;
-    background: linear-gradient(to right, #00b4d8, #5eead4);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  
-  .ai-credit {
-    text-align: center;
-    font-size: 17px;
+    font-size: 18px;
     font-weight: 500;
     font-style: italic;
     margin-top: 12px;
@@ -279,11 +264,17 @@ input[type="submit"]:hover,
     justify-content: center;
     align-items: center;
     gap: 6px;
-    color: #00b4d8;
-    background: none;
+    animation: fadeInUp 0.8s ease-out;
+    background: linear-gradient(to right, #00b4d8, #5eead4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
   
+  .ai-credit .bolt {
+    animation: pulseBolt 1.5s infinite;
+  }
   
+
   
   @keyframes fadeInUp {
     from {
