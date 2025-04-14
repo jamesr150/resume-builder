@@ -349,4 +349,10 @@ textarea:hover {
       transform: translateY(0);
     }
   }
+  h3 {
+    background: rgba(0, 180, 216, 0.05);
+    padding: 6px 12px;
+    border-radius: 6px;
+    display: inline-block;
+  }
   
