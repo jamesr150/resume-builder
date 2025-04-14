@@ -332,4 +332,7 @@ textarea:hover {
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
   }
+  .resume-section {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
   
