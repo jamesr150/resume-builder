@@ -366,4 +366,8 @@ textarea:hover {
     font-weight: 500;
     margin-bottom: 4px;
   }
+  ::placeholder {
+    font-style: italic;
+    color: #a0aab0;
+  }
   
