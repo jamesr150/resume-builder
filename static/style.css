@@ -305,4 +305,8 @@ input[type="submit"]:hover,
       opacity: 0.6;
     }
   }
-  
+  input:focus,
+textarea:focus {
+  box-shadow: 0 0 8px rgba(0, 180, 216, 0.6);
+  border-color: #00b4d8;
+}
