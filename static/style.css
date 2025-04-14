@@ -316,4 +316,8 @@ textarea:focus {
     display: inline-block;
     padding-bottom: 4px;
   }
-  
+  input:hover,
+textarea:hover {
+  transform: scale(1.01);
+  transition: transform 0.2s ease;
+}
