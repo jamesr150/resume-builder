@@ -377,3 +377,8 @@ textarea:hover {
 textarea:hover {
   border-color: #00b4d8;
 }
+.btn {
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
