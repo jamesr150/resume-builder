@@ -385,4 +385,8 @@ textarea:hover {
     margin-top: 40px;
     margin-bottom: 12px;
   }
-    
+  form {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(2px);
+  }
+      
