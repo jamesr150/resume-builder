@@ -373,4 +373,7 @@ textarea:hover {
   .btn:hover {
     box-shadow: 0 0 12px rgba(0, 180, 216, 0.3);
   }
-  
+  input:hover,
+textarea:hover {
+  border-color: #00b4d8;
+}
