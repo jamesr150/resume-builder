@@ -389,4 +389,9 @@ textarea:hover {
     background: rgba(255, 255, 255, 0.02);
     backdrop-filter: blur(2px);
   }
-      
+  input:focus,
+  textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 180, 216, 0.4);
+  }
+  
