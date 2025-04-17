@@ -407,4 +407,13 @@ textarea:hover {
     line-height: 1.6;
     letter-spacing: 0.3px;
   }
-    
+  .resume-container,
+  form {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .resume-container:hover,
+  form:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  }
+      
