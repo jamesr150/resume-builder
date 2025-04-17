@@ -403,4 +403,8 @@ textarea:hover {
     --secondary: #6c5ce7;
     --accent: #ef476f;
   }
-  
+  body {
+    line-height: 1.6;
+    letter-spacing: 0.3px;
+  }
+    
