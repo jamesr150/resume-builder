@@ -398,4 +398,9 @@ textarea:hover {
     -webkit-font-smoothing: antialiased;
     opacity: 0.9;
   }
+  :root {
+    --primary: #00b4d8;
+    --secondary: #6c5ce7;
+    --accent: #ef476f;
+  }
   
