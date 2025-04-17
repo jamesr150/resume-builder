@@ -430,4 +430,21 @@ textarea:hover {
   .clear-btn:focus {
     box-shadow: 0 0 0 4px rgba(0, 180, 216, 0.4);
   }
-        
+  a {
+    position: relative;
+    text-decoration: none;
+  }
+  a::after {
+    content: "";
+    position: absolute;
+    left: 0; bottom: -2px;
+    width: 100%; height: 2px;
+    background: var(--primary);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+  a:hover::after {
+    transform: scaleX(1);
+  }
+          
