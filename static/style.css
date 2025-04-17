@@ -456,4 +456,8 @@ textarea:hover {
     border-color: var(--primary);
     box-shadow: 0 0 0 3px rgba(0, 180, 216, 0.3);
   }
-  
+  .resume-section {
+    border-left: 3px solid var(--primary);
+    padding-left: 16px;
+  }
+    
