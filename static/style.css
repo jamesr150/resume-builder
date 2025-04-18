@@ -472,4 +472,7 @@ textarea:hover {
   background: #00b4d8;
   border-radius: 4px;
 }
+html {
+  scroll-behavior: smooth;
+}
     
