@@ -483,4 +483,21 @@ html {
   border-radius: 4px;
   animation: pulse 1.5s ease-in-out infinite;
 }
+label {
+  position: relative;
+}
+label[data-tip]:hover::after {
+  content: attr(data-tip);
+  position: absolute;
+  bottom: 100%; left: 0;
+  background: #000;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  font-size: 12px;
+  transform: translateY(-6px);
+  opacity: 0.9;
+  pointer-events: none;
+}
     
