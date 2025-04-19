@@ -10,10 +10,11 @@
   --input-bg: #2c2c2c;
   --light-text: #e0e1dd;
   --placeholder: #a0aab0;
+  --highlight: rgba(0, 180, 216, 0.05);
 }
 
 /* ========================
-   Base Styles
+   Base Layout
 ========================= */
 body {
   font-family: 'Inter', sans-serif;
@@ -24,14 +25,11 @@ body {
   line-height: 1.6;
   letter-spacing: 0.3px;
   scroll-behavior: smooth;
-}
-
-html, body {
-  overflow-anchor: none !important;
+  overflow-anchor: none;
 }
 
 /* ========================
-   Form + Container Layout
+   Containers
 ========================= */
 form, .resume-container {
   max-width: 600px;
@@ -40,8 +38,8 @@ form, .resume-container {
   backdrop-filter: blur(2px);
   padding: 30px;
   border-radius: 10px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 form:hover, .resume-container:hover {
@@ -69,12 +67,11 @@ h1, h2, h3 {
 }
 
 h3 {
-  background: rgba(0, 180, 216, 0.05);
+  background: var(--highlight);
   padding: 6px 12px;
   border-radius: 6px;
   display: inline-block;
-  margin-top: 40px;
-  margin-bottom: 12px;
+  margin: 40px 0 12px;
 }
 
 form h3:not(:first-of-type) {
@@ -84,6 +81,7 @@ form h3:not(:first-of-type) {
 }
 
 label {
+  display: block;
   color: #b0bec5;
   font-size: 15px;
   font-weight: 500;
@@ -108,7 +106,7 @@ label[data-tip]:hover::after {
 }
 
 /* ========================
-   Input Fields
+   Inputs
 ========================= */
 input[type="text"],
 input[type="email"],
@@ -155,8 +153,8 @@ input:focus, textarea:focus {
   text-transform: uppercase;
   letter-spacing: 0.5px;
   cursor: pointer;
-  text-align: center;
   display: inline-block;
+  text-align: center;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   transition: background 0.3s, transform 0.2s;
 }
@@ -167,8 +165,8 @@ input:focus, textarea:focus {
 }
 
 .btn:focus, .download-btn:focus, .back-btn:focus, .clear-btn:focus {
-  box-shadow: 0 0 0 4px rgba(0, 180, 216, 0.4);
   outline: none;
+  box-shadow: 0 0 0 4px rgba(0, 180, 216, 0.4);
 }
 
 .clear-btn {
@@ -272,7 +270,7 @@ form {
 }
 
 /* ========================
-   Link underline animation
+   Links
 ========================= */
 a {
   position: relative;
