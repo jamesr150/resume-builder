@@ -74,16 +74,14 @@ h3 {
   margin: 40px 0 12px;
 }
 
-.resume-section h3 {
-  font-size: 18px;
-  margin-bottom: 12px;
-  padding: 0;
-  font-weight: 600;
-  color: var(--light-text);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  padding-bottom: 4px;
+.resume-section {
+  padding: 20px;
+  margin-bottom: 24px;
+  background: rgba(255, 255, 255, 0.03);
+  border-left: 3px solid var(--primary);
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
 }
 
 
@@ -201,15 +199,6 @@ input:focus, textarea:focus {
   margin-bottom: 6px;
 }
 
-.resume-section {
-  background: rgba(255, 255, 255, 0.03);
-  border-left: 3px solid var(--primary);
-  padding: 20px;
-  margin-bottom: 24px;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
 
 .resume-section:hover {
   transform: translateY(-2px);
