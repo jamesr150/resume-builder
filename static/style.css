@@ -75,8 +75,15 @@ h3 {
 }
 
 .resume-section h3 {
-  margin: 0 0 12px;
+  font-size: 18px;
+  margin-bottom: 12px;
+  padding: 0;
+  font-weight: 600;
+  color: var(--light-text);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
+
 
 label {
   display: block;
