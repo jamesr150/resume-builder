@@ -342,3 +342,6 @@ a:hover::after {
 .app-footer p {
   margin: 0;
 }
+.resume-section:hover, form:hover {
+  box-shadow: 0 8px 24px rgba(0, 180, 216, 0.2);
+}
