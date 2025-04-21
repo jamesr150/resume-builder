@@ -345,3 +345,6 @@ a:hover::after {
 .resume-section:hover, form:hover {
   box-shadow: 0 8px 24px rgba(0, 180, 216, 0.2);
 }
+.btn:hover {
+  box-shadow: 0 0 12px rgba(0, 180, 216, 0.3), 0 0 20px rgba(108, 92, 231, 0.2);
+}
