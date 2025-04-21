@@ -360,3 +360,8 @@ input:focus, textarea:focus {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
+.app-footer a {
+  padding: 4px 10px;
+  border-radius: 4px;
+  background: rgba(0, 180, 216, 0.05);
+}
