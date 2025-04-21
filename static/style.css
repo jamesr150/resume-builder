@@ -348,3 +348,6 @@ a:hover::after {
 .btn:hover {
   box-shadow: 0 0 12px rgba(0, 180, 216, 0.3), 0 0 20px rgba(108, 92, 231, 0.2);
 }
+input:focus, textarea:focus {
+  box-shadow: 0 0 0 4px rgba(0, 180, 216, 0.2);
+}
