@@ -384,3 +384,6 @@ input:focus, textarea:focus {
 .form-header h1:hover::after {
   width: 40%;
 }
+::placeholder {
+  opacity: 0.5;
+}
