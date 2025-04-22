@@ -365,3 +365,6 @@ input:focus, textarea:focus {
   border-radius: 4px;
   background: rgba(0, 180, 216, 0.05);
 }
+h3 {
+  background: linear-gradient(to right, rgba(0, 180, 216, 0.1), transparent);
+}
