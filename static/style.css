@@ -371,3 +371,16 @@ h3 {
 input:focus, textarea:focus {
   outline: 2px solid rgba(0, 180, 216, 0.3);
 }
+.form-header h1::after {
+  content: '';
+  display: block;
+  height: 2px;
+  background: var(--primary);
+  width: 0;
+  margin: 4px auto 0;
+  transition: width 0.4s ease;
+}
+
+.form-header h1:hover::after {
+  width: 40%;
+}
