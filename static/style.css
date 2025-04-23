@@ -414,3 +414,7 @@ h3 {
 input, textarea {
   box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
 }
+.app-footer {
+  text-align: center;
+  padding: 30px 10px;
+}
