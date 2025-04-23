@@ -396,3 +396,7 @@ input:focus, textarea:focus {
 input, textarea {
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
+form, .resume-container {
+  background: rgba(30, 30, 30, 0.75);
+  backdrop-filter: blur(4px);
+}
