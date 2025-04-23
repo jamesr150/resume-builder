@@ -393,3 +393,6 @@ input:focus, textarea:focus {
 .download-btn:hover {
   box-shadow: 0 0 10px var(--primary);
 }
+input, textarea {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
