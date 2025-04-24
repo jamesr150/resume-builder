@@ -439,3 +439,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+input:focus + label,
+input:not(:placeholder-shown) + label {
+  transform: translateY(-24px);
+  font-size: 13px;
+  color: var(--primary);
+}
