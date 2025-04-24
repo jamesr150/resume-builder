@@ -428,3 +428,7 @@ input:hover,
 textarea:hover {
   background-color: #2a2a2a;
 }
+.btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0, 180, 216, 0.25);
+}
