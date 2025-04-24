@@ -418,3 +418,9 @@ input, textarea {
   text-align: center;
   padding: 30px 10px;
 }
+.resume-section:not(:last-of-type)::after {
+  content: '';
+  display: block;
+  margin-top: 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
