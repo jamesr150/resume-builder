@@ -435,3 +435,7 @@ textarea:hover {
 a:hover {
   color: #5eead4;
 }
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
