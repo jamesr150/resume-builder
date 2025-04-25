@@ -456,3 +456,14 @@ input:not(:placeholder-shown) + label {
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
+.resume-section ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.resume-section ul li::before {
+  content: '✓';
+  color: var(--primary);
+  margin-right: 8px;
+  font-weight: bold;
+}
