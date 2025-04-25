@@ -445,3 +445,14 @@ input:not(:placeholder-shown) + label {
   font-size: 13px;
   color: var(--primary);
 }
+.btn, .download-btn {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  background-size: 200% 200%;
+  animation: gradientShift 4s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
