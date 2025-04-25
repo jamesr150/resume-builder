@@ -467,3 +467,7 @@ input:not(:placeholder-shown) + label {
   margin-right: 8px;
   font-weight: bold;
 }
+input,
+textarea {
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
