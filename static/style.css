@@ -493,3 +493,6 @@ h1, h2, h3 {
   font-weight: 600;
   letter-spacing: 0.8px;
 }
+body {
+  background: radial-gradient(circle at top, #1a1a1a 0%, #121212 100%);
+}
