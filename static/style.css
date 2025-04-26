@@ -488,3 +488,8 @@ form, .resume-container {
   border-radius: 16px;
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
+h1, h2, h3 {
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+}
