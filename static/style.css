@@ -496,3 +496,9 @@ h1, h2, h3 {
 body {
   background: radial-gradient(circle at top, #1a1a1a 0%, #121212 100%);
 }
+hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(to right, var(--primary), transparent);
+  margin: 30px 0;
+}
