@@ -502,3 +502,7 @@ hr {
   background: linear-gradient(to right, var(--primary), transparent);
   margin: 30px 0;
 }
+.btn:hover, .download-btn:hover, .back-btn:hover {
+  box-shadow: 0 4px 20px rgba(0, 180, 216, 0.3);
+  transform: translateY(-1px);
+}
