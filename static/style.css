@@ -447,3 +447,6 @@ textarea:focus {
   background: linear-gradient(90deg, rgba(255,255,255,0.05), rgba(0,0,0,0.15));
   backdrop-filter: blur(3px);
 }
+h1, h2, h3 {
+  text-shadow: 0 0 2px rgba(0, 180, 216, 0.15);
+}
