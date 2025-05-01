@@ -428,3 +428,9 @@ a:hover::after {
   background: var(--primary);
   border-radius: 4px;
 }
+.resume-section:not(:last-of-type)::after {
+  content: '';
+  display: block;
+  margin: 32px 0 12px;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
+}
