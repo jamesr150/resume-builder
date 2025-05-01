@@ -438,3 +438,8 @@ a:hover::after {
   box-shadow: 0 16px 36px rgba(0, 180, 216, 0.12);
   border-color: rgba(0, 180, 216, 0.12);
 }
+input:focus,
+textarea:focus {
+  box-shadow: 0 0 0 4px rgba(0, 180, 216, 0.35);
+  border-color: var(--primary);
+}
