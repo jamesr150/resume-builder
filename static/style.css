@@ -526,3 +526,8 @@ h3::before {
   font-size: 20px;
   vertical-align: middle;
 }
+.btn:focus {
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  box-shadow: 0 0 0 3px rgba(0, 180, 216, 0.5);
+}
