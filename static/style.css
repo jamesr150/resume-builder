@@ -511,3 +511,11 @@ form, .resume-container {
   backdrop-filter: blur(6px);
   border: 1px solid rgba(255, 255, 255, 0.06);
 }
+.resume-section {
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.resume-section:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+}
