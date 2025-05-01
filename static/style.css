@@ -434,3 +434,7 @@ a:hover::after {
   margin: 32px 0 12px;
   border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
 }
+.resume-container:hover {
+  box-shadow: 0 16px 36px rgba(0, 180, 216, 0.12);
+  border-color: rgba(0, 180, 216, 0.12);
+}
