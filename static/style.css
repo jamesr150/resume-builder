@@ -531,3 +531,11 @@ h3::before {
   background-clip: padding-box;
   box-shadow: 0 0 0 3px rgba(0, 180, 216, 0.5);
 }
+input, textarea, label {
+  animation: fadeInInputs 0.6s ease-in-out;
+}
+
+@keyframes fadeInInputs {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
