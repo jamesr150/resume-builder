@@ -443,3 +443,7 @@ textarea:focus {
   box-shadow: 0 0 0 4px rgba(0, 180, 216, 0.35);
   border-color: var(--primary);
 }
+.resume-header {
+  background: linear-gradient(90deg, rgba(255,255,255,0.05), rgba(0,0,0,0.15));
+  backdrop-filter: blur(3px);
+}
