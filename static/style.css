@@ -467,3 +467,11 @@ textarea:focus + label {
   opacity: 0.9;
   transition: all 0.3s ease;
 }
+input, textarea {
+  border-bottom: 2px solid transparent;
+  transition: border-bottom 0.3s ease;
+}
+
+input:focus, textarea:focus {
+  border-bottom: 2px solid var(--primary);
+}
