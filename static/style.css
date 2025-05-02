@@ -450,3 +450,12 @@ textarea:focus {
 h1, h2, h3 {
   text-shadow: 0 0 2px rgba(0, 180, 216, 0.15);
 }
+.btn:hover, .download-btn:hover {
+  background-position: right center;
+  background-size: 300% 300%;
+  transition: background-position 0.4s ease;
+}
+.resume-section:focus-within {
+  border-left: 3px solid var(--secondary);
+  box-shadow: inset 0 0 12px rgba(108, 92, 231, 0.2);
+}
