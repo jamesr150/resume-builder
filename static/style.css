@@ -490,3 +490,6 @@ label + textarea {
   background: linear-gradient(to right, rgba(0,180,216,0.2), transparent);
   margin: 30px 0 10px;
 }
+.theme-toggle-btn:hover {
+  color: #5eead4;
+}
