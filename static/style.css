@@ -475,3 +475,7 @@ input, textarea {
 input:focus, textarea:focus {
   border-bottom: 2px solid var(--primary);
 }
+label + input,
+label + textarea {
+  margin-top: 6px;
+}
