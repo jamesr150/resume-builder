@@ -502,3 +502,13 @@ input:hover,
 textarea:hover {
   box-shadow: 0 0 6px rgba(0, 180, 216, 0.15);
 }
+@media (max-width: 600px) {
+  form, .resume-container {
+    padding: 20px;
+  }
+
+  .btn {
+    padding: 10px 18px;
+    font-size: 14px;
+  }
+}
