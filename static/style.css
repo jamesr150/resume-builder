@@ -493,3 +493,8 @@ label + textarea {
 .theme-toggle-btn:hover {
   color: #5eead4;
 }
+input:focus::placeholder,
+textarea:focus::placeholder {
+  opacity: 0.3;
+  transition: opacity 0.2s ease;
+}
