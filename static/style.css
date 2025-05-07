@@ -498,3 +498,7 @@ textarea:focus::placeholder {
   opacity: 0.3;
   transition: opacity 0.2s ease;
 }
+input:hover,
+textarea:hover {
+  box-shadow: 0 0 6px rgba(0, 180, 216, 0.15);
+}
