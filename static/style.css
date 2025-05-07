@@ -512,3 +512,7 @@ textarea:hover {
     font-size: 14px;
   }
 }
+textarea {
+  resize: vertical;
+  max-height: 300px;
+}
